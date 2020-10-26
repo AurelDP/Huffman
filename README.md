@@ -5,7 +5,7 @@ Le but du projet Huffman est de réaliser un compresseur de fichier texte se bas
 
 | Nom | Description |
 | --- | ----------- |
-| Occurrences | Lister des compter les caractères présents dans le fichier texte |
+| Occurrences | Lister et compter les caractères présents dans le fichier texte |
 | Arbre et dictionnaire | Positionner ces caractères dans un arbre et en sortir un dictionnaire binaire associant un nombre binaire à chaque caractère |
 | Encodage | Ecriture du nouveau fichier binaire en s'aidant du dictionnaire déjà crée |
 | Décodage | Récupération du dictionnaire et reconstruction du fichier texte à partir du fichier binaire |
