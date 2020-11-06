@@ -51,6 +51,12 @@ Module.symvers
 Mkfile.old
 dkms.conf
 
+# CodeBlocks
+*.cbp
+*.layout
+bin/
+obj/
+
 # Exclude test files
 Files/
 .vscode/
