@@ -53,3 +53,5 @@ dkms.conf
 
 # Exclude test files
 Files/
+.vscode/
+Debug/
