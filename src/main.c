@@ -17,7 +17,7 @@ int size_text(FILE* file){
     return size;
 }
 
-void main(){
+int main(){
     text2binary();
     exit(0);
 }
