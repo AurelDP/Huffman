@@ -1,12 +1,13 @@
+#define _CRT_SECURE_NO_DEPRECATE                    // Bloque le rapport d'erreur de Visual Studio concernant la fonction "fopen"
 #include <stdlib.h>
 #include <stdio.h>
 #include "BinaryTranslation.h"
 
 void text2binary(){
     FILE* file_txt = NULL;
-    file_txt = fopen("../../Files/input.txt", "r");
+    file_txt = fopen("Files/input.txt", "r");
     FILE* file_bin = NULL;
-    file_bin = fopen("../../Files/binary.txt", "wb");
+    file_bin = fopen("Files/binary.txt", "wb");
 
     char c;
 
@@ -22,7 +23,7 @@ void text2binary(){
 
     fclose(file_txt);
     fclose(file_bin);
-}
+ }
 
 char* char2binary(char c){
     char* bin = (char*)malloc(9*sizeof(char));

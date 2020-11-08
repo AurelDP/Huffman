@@ -57,6 +57,10 @@ dkms.conf
 bin/
 obj/
 
+# Visual Studio
+.vs
+x64/
+
 # Exclude test files
 Files/
 .vscode/
