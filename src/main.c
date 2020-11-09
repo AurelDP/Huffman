@@ -1,6 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "BinaryTranslation/BinaryTranslation.h"
+#include "TreeDictionary/Dictionary.h"
 
 int size_text(FILE* file);
 
