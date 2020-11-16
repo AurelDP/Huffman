@@ -21,29 +21,35 @@ typedef struct Tree {
 
 char* codage_huffman(Tree* arbre, char caractere, char* pile, int* i) {
 
+    char* temp;
+
     if (arbre == NULL)
     {
         printf("[arbre vide]\n");
         return NULL;
     }
 
-    if (arbre->left == NULL && arbre->right == NULL) return file;
-
     pile = (char*)realloc(pile, sizeof(char) * i);
 
     if (arbre->left->info == caractere)
     {   
         strcat(pile, '0');
-        return file;
+        return pile;
     }
-    else
+
+    if (arbre->right->info == caractere)
     {
         strcat(pile, '1');
-        i = i + 1;
-        return codage_huffman(arbre->right, caractere, file, i);
+        return pile;
     }
 
+    i = i + 1;
 
+    temp = pile;
+    strcat(pile, '0');
+    codage_huffman(arbre->left, caractere, pile, i);
+    strcat(temp, '1');
+    codage_huffman(arbre->right, caractere, temp, i);
 }
 
 
@@ -56,7 +62,7 @@ void create_dico() {
         Tree* arbre;
         char* pile;
 
-        pile = (char*)malloc(sizeof(char));
+        pile = (char*)malloc(sizeof(char));// creation chaine de caractère qui sera composé de 0 et 1
         liste = list_huffman();// liste chainee de Caractere.
         arbre = tree_occurence(liste);// Question D
 
