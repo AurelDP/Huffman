@@ -107,15 +107,27 @@ int size_of_list(Element* list) {
 	}
 }
 
-Tree* create_node(Element* list) {
-	Tree* new_node = (Tree*)malloc(sizeof(Tree);
-	Tree* left = (Tree*)malloc(sizeof(Tree));
-	Tree* right = (Tree*)malloc(sizeof(Tree));
-	right->info = min_list(list);
-	left->info = min_list(list);
-	new_node->right = right;
-	new_node->left = left;
-	new_node->info->occurence = right->info->occurence + left->info->occurence;
-	new_node->info->chara = NULL;
+Tree* create_node(Data* info) {
+	Tree* new_node = (Tree*)malloc(sizeof(Tree));
+	new_node->right = NULL;
+	new_node->left = NULL;
+	new_node->info->occurence = info->occurence;
+	new_node->info->chara = "";
+}
+
+Tree* create_double_node(Element* list) {
+	Tree* new_node = (Tree*)malloc(sizeof(Tree));
+	Tree* node_left = (Tree*)malloc(sizeof(Tree));
+	Tree* node_right = (Tree*)malloc(sizeof(Tree));
+	node_right->info = min_list(list);
+	node_right->left = NULL;
+	node_right->right = NULL;
+	node_left->info = min_list(list);
+	node_left->left = NULL;
+	node_left->right = NULL;
+	new_node->right = node_right;
+	new_node->left = node_left;
+	new_node->info->occurence = node_right->info->occurence + node_left->info->occurence;
+	new_node->info->chara = "";
 	return new_node;
 }

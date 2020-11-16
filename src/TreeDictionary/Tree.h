@@ -34,6 +34,7 @@ void suppr_min_list(Element** list, char c, int occ);
 
 int size_of_list(Element* list);
 
-Tree* create_node(Element* list);
+Tree* create_node(Data* info);
+Tree* create_double_node(Element* list);
 
 #endif

@@ -1,23 +1,26 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "BinaryTranslation/BinaryTranslation.h"
+#include "TreeDictionary/Tree.h"
 
 int size_text(FILE* file);
 
-int size_text(FILE* file){
+int size_text(FILE* file) {
     int size = 0;
     char c;
-    do{
+    do {
         c = fgetc(file);
-        if (c != EOF){
+        if (c != EOF) {
             size++;
         }
-    }while(c != EOF);
+    } while (c != EOF);
     rewind(file);
     return size;
 }
 
-int main(){
+int main() {
     text2binary();
+    Element* list = create_list(5);
+    print_list(list);
     exit(0);
 }
