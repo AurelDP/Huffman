@@ -20,7 +20,9 @@ int size_text(FILE* file) {
 
 int main() {
     text2binary();
-    Element* list = create_list(5);
+    List* list = create_list(5);
     print_list(list);
+    ListTree* list_tree = create_list_tree(list->data);
+    print_list_tree(list_tree);
     exit(0);
 }

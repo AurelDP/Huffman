@@ -1,40 +1,71 @@
 #ifndef TREE
 #define TREE
 
+// Information d'une liste ou d'un noeud
 typedef struct Data {
 	char chara;
 	int occurence;
 }Data;
 
-typedef struct Element {
+// Structure d'une liste
+typedef struct List {
 	struct Data* data;
-	struct Element* next;
-}Element;
+	struct List* next;
+}List;
 
+// Structure d'une liste de noeuds
+typedef struct ListTree {
+	struct Node* node;
+	struct ListTree* next;
+}ListTree;
+
+// Structure d'un noeud d'arbre
 typedef struct Node {
-	struct Tree* tree;
-	struct Node* next;
+	struct Data* info;
+	struct Node* right;
+	struct Node* left;
 }Node;
 
-typedef struct Tree {
-	struct Data* info;
-	struct Tree* right;
-	struct Tree* left;
-}Tree;
+//-------------------------------------------------------------
+// FONCTIONS DE CREATION DE LA LISTE (Rémi)
+//-------------------------------------------------------------
+
 
 Data* create_data(char c, int oc);
-Element* create_element(Data* data);
-Element* create_list(int number);
+
+List* create_element(Data* data);
+
+List* create_list(int number);
 
 void print_data(Data* data);
-void print_list(Element* list);
 
-Data* min_list(Element* list);
-void suppr_min_list(Element** list, char c, int occ);
+void print_list(List* list);
 
-int size_of_list(Element* list);
 
-Tree* create_node(Data* info);
-Tree* create_double_node(Element* list);
+//-------------------------------------------------------------
+// FONCTIONS DE TRANSFORMATION LISTE -> LISTE DE NOEUDS
+//-------------------------------------------------------------
+
+
+Node* create_node(Data* info);
+
+ListTree* create_list_tree(Data* info);
+
+ListTree* transform_list(List* list);
+
+void print_list_tree(ListTree* list);
+
+//-------------------------------------------------------------
+// FONCTIONS DE TRANSFORMATION LISTE -> LISTE DE NOEUDS
+//-------------------------------------------------------------
+
+
+Data* min_list(List* list);
+
+void suppr_min_list(List** list, char c, int occ);
+
+int size_of_list(List* list);
+
+Node* create_double_node(List* list);
 
 #endif
