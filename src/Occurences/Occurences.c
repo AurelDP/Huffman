@@ -4,40 +4,46 @@
 #include "Occurences.h"
 
 Element* occurence() {
-
-    FILE* file = fopen("file.txt", "r");
+    
+    FILE* file = fopen("Files/test.txt", "r");
     char c;
 
     Element* begin_list = NULL;
     Element* temp = NULL;
     int i = 0;
 
+    
     do {
-
         c = fgetc(file);
         if (c != EOF) {
+
             if (verif_list(begin_list, c) == 0) {
 
                 if (i == 0) {
                     begin_list = creat_new_link(c);
                     temp = begin_list;
                     i++;
-                    printf("\nOK START\n");
+                    //printf("\nOK START\n");
                 }
                 else {
-                    temp = creat_new_link(c);
-                    printf("\nOK NEXT\n");
+                    temp->next = creat_new_link(c);
+                    temp = temp->next;
+                    //printf("\n%c", (temp)->character);
+                    //printf("\nOK NEXT\n");
                 }
 
+                //printf("Lettre : %c\n", temp->character);
+                //printf("Occurence : %d\n", temp->number);
             }
-            printf("Lettre : %c\n", temp->character);
-            printf("Occurence : %d\n", temp->number);
+            
         }
 
     } while (c != EOF);
 
     rewind(file);
     fclose(file);
+
+    print_element(begin_list);
 
     return begin_list;
 
@@ -56,8 +62,10 @@ int verif_list(Element* l, char c) {
     Element* temp = l;
 
     while (temp != NULL) {
+        //printf("\n%c", c);
+        //printf("\n%c", (temp)->character);
         if ((temp)->character == c) {
-            (temp)->number++;
+            (temp)->number = (temp)->number + 1 ;
             return 1;
         }
         temp = (temp)->next;
@@ -67,5 +75,14 @@ int verif_list(Element* l, char c) {
 
 
 
+void print_element(Element* l) {
+    Element* temp = l;
+
+    while (temp != NULL) {
+        printf("Lettre : %c\n", temp->character);
+        printf("Occurence : %d\n", temp->number);
+        temp = (temp)->next;
+    }
+}
 
 

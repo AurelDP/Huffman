@@ -1,7 +1,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "BinaryTranslation/BinaryTranslation.h"
-#include "Occurences.h"
+#include "Occurences/Occurences.h"
 
 int size_text(FILE* file);
 
@@ -20,6 +20,5 @@ int size_text(FILE* file){
 
 int main(){
     text2binary();
-    exit(0);
     occurence();
 }

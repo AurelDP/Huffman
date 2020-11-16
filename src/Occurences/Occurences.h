@@ -10,5 +10,6 @@ typedef struct Element {
 Element* occurence();
 Element* creat_new_link(char c);
 int verif_list(Element* l, char c);
+void print_element(Element* l);
 
 #endif
