@@ -63,8 +63,7 @@ void print_list(List* list) {
 
 Node* create_node(Data* info) {
 	Node* new_node = (Node*)malloc(sizeof(Node));
-	new_node->info->occurence = info->occurence;
-	new_node->info->chara = info->chara;
+	new_node->info = info;
 	new_node->right = NULL;
 	new_node->left = NULL;
 	return new_node;
