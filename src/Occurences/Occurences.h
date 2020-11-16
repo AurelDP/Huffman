@@ -1,15 +1,20 @@
 #ifndef OCCURENCES
 #define OCCURENCES
 
-typedef struct Element {
-    int number;
-    char character;
-    struct Element* next;
-} Element;
+typedef struct Data {
+    char chara;
+    int occurence;
+}Data;
 
-Element* occurence();
-Element* creat_new_link(char c);
-int verif_list(Element* l, char c);
-void print_element(Element* l);
+// Structure d'une liste
+typedef struct List {
+    struct Data* data;
+    struct List* next;
+}List;
+
+List* occurence();
+List* creat_new_link(char c);
+int verif_list(List* l, char c);
+void print_element(List* l);
 
 #endif

@@ -3,13 +3,13 @@
 #include <stdio.h>
 #include "Occurences.h"
 
-Element* occurence() {
+List* occurence() {
     
     FILE* file = fopen("Files/test.txt", "r");
     char c;
 
-    Element* begin_list = NULL;
-    Element* temp = NULL;
+    List* begin_list = NULL;
+    List* temp = NULL;
     int i = 0;
 
     
@@ -28,12 +28,12 @@ Element* occurence() {
                 else {
                     temp->next = creat_new_link(c);
                     temp = temp->next;
-                    //printf("\n%c", (temp)->character);
+                    //printf("\n%c", (temp)->data->chara);
                     //printf("\nOK NEXT\n");
                 }
 
-                //printf("Lettre : %c\n", temp->character);
-                //printf("Occurence : %d\n", temp->number);
+                //printf("Lettre : %c\n", temp->data->chara);
+                //printf("Occurence : %d\n", temp->data->occurence);
             }
             
         }
@@ -49,23 +49,25 @@ Element* occurence() {
 
 }
 
-Element* creat_new_link(char c) {
-    Element* link = malloc(sizeof(Element));
-    link->character = c;
-    link->number = 1;
+List* creat_new_link(char c) {
+    List* link = malloc(sizeof(List));
+    Data* data= malloc(sizeof(Data));
+    data->chara = c;
+    data->occurence= 1;
+    link->data = data;
     link->next = NULL;
     return link;
 
 }
 
-int verif_list(Element* l, char c) {
-    Element* temp = l;
+int verif_list(List* l, char c) {
+    List* temp = l;
 
     while (temp != NULL) {
         //printf("\n%c", c);
-        //printf("\n%c", (temp)->character);
-        if ((temp)->character == c) {
-            (temp)->number = (temp)->number + 1 ;
+        //printf("\n%c", (temp)->data->chara);
+        if ((temp)->data->chara == c) {
+            (temp)->data->occurence = (temp)->data->occurence + 1 ;
             return 1;
         }
         temp = (temp)->next;
@@ -75,12 +77,12 @@ int verif_list(Element* l, char c) {
 
 
 
-void print_element(Element* l) {
-    Element* temp = l;
+void print_element(List* l) {
+    List* temp = l;
 
     while (temp != NULL) {
-        printf("Lettre : %c\n", temp->character);
-        printf("Occurence : %d\n", temp->number);
+        printf("Lettre : %c\n", temp->data->chara);
+        printf("Occurence : %d\n", temp->data->occurence);
         temp = (temp)->next;
     }
 }
