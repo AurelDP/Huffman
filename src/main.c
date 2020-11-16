@@ -22,7 +22,7 @@ int main() {
     text2binary();
     List* list = create_list(5);
     print_list(list);
-    ListTree* list_tree = create_list_tree(list->data);
+    ListTree* list_tree = transform_list(list);
     print_list_tree(list_tree);
     exit(0);
 }
