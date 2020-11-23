@@ -56,16 +56,20 @@ ListTree* transform_list(List* list);
 void print_list_tree(ListTree* list);
 
 //-------------------------------------------------------------
-// FONCTIONS DE TRANSFORMATION LISTE -> LISTE DE NOEUDS
+// FONCTIONS DE TRANSFORMATION DE LA LISTE ET CREATION ARBRE
 //-------------------------------------------------------------
 
 
-Data* min_list(List* list);
+Data* min_list(ListTree* list);
 
-void suppr_min_list(List** list, char c, int occ);
+void suppr_min_list(ListTree** list, char c, int occ);
 
-int size_of_list(List* list);
+int size_of_list(ListTree* list);
 
-Node* create_double_node(List* list);
+Node* create_double_node(ListTree* list);
+
+void insert_node(ListTree** list, Node* node);
+
+Node* create_huffman_tree(ListTree** list);
 
 #endif

@@ -102,32 +102,35 @@ void print_list_tree(ListTree* list) {
 }
 
 //-------------------------------------------------------------
-// FONCTIONS DE TRANSFORMATION LISTE -> LISTE DE NOEUDS
+// FONCTIONS DE TRANSFORMATION DE LA LISTE ET CREATION ARBRE
 //-------------------------------------------------------------
 
 
-Data* min_list(List* list) {
-	List* temp = NULL;
+Data* min_list(ListTree* list) {
+	ListTree* temp = NULL;
 	Data* mini = (Data*)malloc(sizeof(Data));
 	if (list != NULL) {
 		temp = list;
-		mini->occurence = temp->data->occurence;
+		mini->occurence = temp->node->info->occurence;
 		while (temp != NULL) {
-			if (mini->occurence < temp->data->occurence) {
-				mini->occurence = temp->data->occurence;
+			if (mini->occurence < temp->node->info->occurence) {
+				mini->occurence = temp->node->info->occurence;
 			}
 			temp = temp->next;
 		}
 		suppr_min_list(&list, mini->chara, mini->occurence);
 	}
+	else {
+		mini = NULL;
+	}
 	return mini;
 }
 
-void suppr_min_list(List** list, char c, int occ) {
-	List* old = NULL;
+void suppr_min_list(ListTree** list, char c, int occ) {
+	ListTree* old = NULL;
 	if ((*list) != NULL) {
 		suppr_min_list(&((*list)->next), c, occ);
-		if ((*list)->data->chara == c && (*list)->data->occurence == occ) {
+		if ((*list)->node->info->chara == c && (*list)->node->info->occurence == occ) {
 			old = (*list);
 			(*list) = (*list)->next;
 			free(old);
@@ -135,7 +138,7 @@ void suppr_min_list(List** list, char c, int occ) {
 	}
 }
 
-int size_of_list(List* list) {
+int size_of_list(ListTree* list) {
 	if (list == NULL) {
 		return 0;
 	}
@@ -144,12 +147,37 @@ int size_of_list(List* list) {
 	}
 }
 
-Node* create_double_node(List* list) {
+Node* create_double_node(ListTree* list) {
 	Node* new_node = (Node*)malloc(sizeof(Node));
 	Node* node_right = create_node(min_list(list));
 	Node* node_left = create_node(min_list(list));
-	new_node->right = node_right;
-	new_node->left = node_left;
-	new_node->info->occurence = node_right->info->occurence + node_left->info->occurence;
+	if (list != NULL) {
+		new_node->right = node_right;
+		new_node->left = node_left;
+		new_node->info->occurence = node_right->info->occurence + node_left->info->occurence;
+		new_node->info->chara = NULL;
+	}
+	else {
+		new_node = NULL;
+	}
 	return new_node;
+}
+
+void insert_node(ListTree** list, Node* node) {
+	ListTree* new_node = (ListTree*)malloc(sizeof(ListTree));
+	new_node->node = node;
+	new_node->next = *list;
+	*list = new_node;
+}
+
+Node* create_huffman_tree(ListTree** list) {
+	Node* tree = (Node*)malloc(sizeof(Node));
+	if (*list != NULL) {
+		while (size_of_list(*list) > 1) {
+			Node* new_node = create_double_node(*list);
+			insert_node(list, new_node);
+		}
+	}
+	tree = (*list)->node;
+	return tree;
 }
