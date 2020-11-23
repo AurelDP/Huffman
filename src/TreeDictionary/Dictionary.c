@@ -3,20 +3,6 @@
 #include <string.h>
 #include "Dictionary.h"
 
-
-typedef struct Element {
-    int number;
-    char character;
-    struct Element* next;
-} Element;
-
-
-typedef struct Tree {
-    struct Data* info;
-    struct Tree* right;
-    struct Tree* left;
-}Tree;
-
 ///Question E
 
 char* codage_huffman(Tree* arbre, char caractere, char* pile, int* i) {
@@ -55,28 +41,28 @@ char* codage_huffman(Tree* arbre, char caractere, char* pile, int* i) {
 
 void create_dico() {
 
-        FILE* file = fopen("Files/dico.txt", "w");// [w] vide fichier si existant 
+    FILE* file = fopen("Files/dico.txt", "w");// [w] vide fichier si existant 
 
         
-        Element* liste;
-        Tree* arbre;
-        char* pile;
+    Element* liste;
+    Tree* arbre;
+    char* pile;
 
-        pile = (char*)malloc(sizeof(char));// creation chaine de caractère qui sera composé de 0 et 1
-        liste = list_huffman();// liste chainee de Caractere.
-        arbre = tree_occurence(liste);// Question D
+    pile = (char*)malloc(sizeof(char));// creation chaine de caractère qui sera composé de 0 et 1
+    liste = list_huffman();// liste chainee de Caractere.
+    arbre = tree_occurence(liste);// Question D
 
-        while (liste != NULL)
-        {
-            pile = NULL;
-            codage_huffman(arbre, liste->character, pile, 1);
-            fprintf(file, "%c : ", liste->character);
-            fprintf(file, "%c", pile);
-            fputs("\n", file);
-            liste = liste->next;
-        }
+    while (liste != NULL)
+    {
+        pile = NULL;
+        codage_huffman(arbre, liste->character, pile, 1);
+        fprintf(file, "%c : ", liste->character);
+        fprintf(file, "%c", pile);
+        fputs("\n", file);
+        liste = liste->next;
+    }
 
-        free_arbre(arbre);// cree fonction free un arbre
-        free_element(liste);// cree fonction free un element
-        fclose(file);
+    free_arbre(arbre);// cree fonction free un arbre
+    free_element(liste);// cree fonction free un element
+    fclose(file);
 }
