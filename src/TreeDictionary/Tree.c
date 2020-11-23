@@ -42,19 +42,6 @@ List* create_list(int number) {
 	return list;
 }
 
-void print_data(Data* data) {
-	printf("\n%c x %d", data->chara, data->occurence);
-}
-
-void print_list(List* list) {
-	printf("\nLISTE : \n");
-	while (list != NULL) {
-		print_data(list->data);
-		list = list->next;
-	}
-	printf("\n");
-}
-
 
 //-------------------------------------------------------------
 // FONCTIONS DE TRANSFORMATION LISTE -> LISTE DE NOEUDS
@@ -92,14 +79,6 @@ ListTree* transform_list(List* list) {
 	return new_list;
 }
 
-void print_list_tree(ListTree* list) {
-	printf("\nLISTE TREE : \n");
-	while (list != NULL) {
-		print_data(list->node->info);
-		list = list->next;
-	}
-	printf("\n");
-}
 
 //-------------------------------------------------------------
 // FONCTIONS DE TRANSFORMATION DE LA LISTE ET CREATION ARBRE
@@ -178,4 +157,32 @@ Node* create_huffman_tree(ListTree** list) {
 	}
 	tree = (*list)->node;
 	return tree;
+}
+
+
+//-------------------------------------------------------------
+// FONCTIONS TEMPORAIRES D'AFFICHAGE
+//-------------------------------------------------------------
+
+
+void print_data(Data* data) {
+	printf("\n%c x %d", data->chara, data->occurence);
+}
+
+void print_list(List* list) {
+	printf("\nLISTE : \n");
+	while (list != NULL) {
+		print_data(list->data);
+		list = list->next;
+	}
+	printf("\n");
+}
+
+void print_list_tree(ListTree* list) {
+	printf("\nLISTE TREE : \n");
+	while (list != NULL) {
+		print_data(list->node->info);
+		list = list->next;
+	}
+	printf("\n");
 }

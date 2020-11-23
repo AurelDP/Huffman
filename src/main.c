@@ -19,10 +19,14 @@ int size_text(FILE* file) {
 }*/
 
 int main() {
+    printf("Start encoding :\n\n");
+    printf("Character recovery and classification...\n");
     List* list = create_list(5);
     ListTree* list_tree = transform_list(list);
+    printf("Creation of the Huffman tree...\n");
     Node* huffman_tree = create_huffman_tree(&list_tree);
     free(list);
     free(list_tree);
+    printf("Encoding complete !\n\n");
     exit(0);
 }

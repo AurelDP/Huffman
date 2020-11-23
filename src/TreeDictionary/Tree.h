@@ -26,6 +26,7 @@ typedef struct Node {
 	struct Node* left;
 }Node;
 
+
 //-------------------------------------------------------------
 // FONCTIONS DE CREATION DE LA LISTE (Rémi)
 //-------------------------------------------------------------
@@ -36,10 +37,6 @@ Data* create_data(char c, int oc);
 List* create_element(Data* data);
 
 List* create_list(int number);
-
-void print_data(Data* data);
-
-void print_list(List* list);
 
 
 //-------------------------------------------------------------
@@ -53,7 +50,6 @@ ListTree* create_list_tree(Data* info);
 
 ListTree* transform_list(List* list);
 
-void print_list_tree(ListTree* list);
 
 //-------------------------------------------------------------
 // FONCTIONS DE TRANSFORMATION DE LA LISTE ET CREATION ARBRE
@@ -71,5 +67,18 @@ Node* create_double_node(ListTree** list);
 void insert_node(ListTree** list, Node* node);
 
 Node* create_huffman_tree(ListTree** list);
+
+
+//-------------------------------------------------------------
+// FONCTIONS TEMPORAIRES D'AFFICHAGE
+//-------------------------------------------------------------
+
+
+void print_data(Data* data);
+
+void print_list(List* list);
+
+void print_list_tree(ListTree* list);
+
 
 #endif
