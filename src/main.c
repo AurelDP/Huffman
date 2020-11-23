@@ -22,7 +22,7 @@ int main() {
     //text2binary();
     List* list = create_list(5);
     ListTree* list_tree = transform_list(list);
-    Node* huffman_tree = create_huffman_tree(&list);
+    Node* huffman_tree = create_huffman_tree(&list_tree);
     print_list_tree(list_tree);
     exit(0);
 }
