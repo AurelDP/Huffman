@@ -1,23 +1,33 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "BinaryTranslation/BinaryTranslation.h"
+#include "Occurences/Occurences.h"
+#include "TreeDictionary/Tree.h"
 
-int size_text(FILE* file);
+/*int size_text(FILE* file);
 
-int size_text(FILE* file){
+int size_text(FILE* file) {
     int size = 0;
     char c;
-    do{
+    do {
         c = fgetc(file);
-        if (c != EOF){
+        if (c != EOF) {
             size++;
         }
-    }while(c != EOF);
+    } while (c != EOF);
     rewind(file);
     return size;
-}
+}*/
 
 int main(){
-    text2binary();
+    printf("Start encoding :\n\n");
+    printf("Character recovery and classification...\n");
+    List* list = occurence();
+    ListTree* list_tree = transform_list(list);
+    printf("Creation of the Huffman tree...\n");
+    Node* huffman_tree = create_huffman_tree(&list_tree);
+    free(list);
+    free(list_tree);
+    printf("Encoding complete !\n\n");
     exit(0);
 }

@@ -26,11 +26,19 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <CompileAs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">CompileAsC</CompileAs>
     </ClCompile>
+    <ClCompile Include="src\Occurences\Occurences.c" />
+    <ClCompile Include="src\TreeDictionary\Tree.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BinaryTranslation\BinaryTranslation.h">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
+    <ClInclude Include="src\Occurences\Occurences.h" />
+    <ClInclude Include="src\Structures\Structures.h" />
+    <ClInclude Include="src\TreeDictionary\Tree.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\TreeDictionary\.gitkeep" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>

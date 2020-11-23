@@ -21,10 +21,28 @@
     <ClCompile Include="src\BinaryTranslation\BinaryTranslation.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Occurences\Occurences.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TreeDictionary\Tree.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BinaryTranslation\BinaryTranslation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Occurences\Occurences.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\TreeDictionary\Tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Structures\Structures.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\TreeDictionary\.gitkeep" />
   </ItemGroup>
 </Project>
