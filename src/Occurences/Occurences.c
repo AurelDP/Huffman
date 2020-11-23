@@ -5,14 +5,13 @@
 
 List* occurence() {
     
-    FILE* file = fopen("Files/test.txt", "r");
+    FILE* file = fopen("Files/input.txt", "r");
     char c;
 
     List* begin_list = NULL;
     List* temp = NULL;
     int i = 0;
 
-    
     do {
         c = fgetc(file);
         if (c != EOF) {
@@ -23,30 +22,19 @@ List* occurence() {
                     begin_list = creat_new_link(c);
                     temp = begin_list;
                     i++;
-                    //printf("\nOK START\n");
                 }
                 else {
                     temp->next = creat_new_link(c);
                     temp = temp->next;
-                    //printf("\n%c", (temp)->data->chara);
-                    //printf("\nOK NEXT\n");
                 }
-
-                //printf("Lettre : %c\n", temp->data->chara);
-                //printf("Occurence : %d\n", temp->data->occurence);
             }
-            
         }
-
     } while (c != EOF);
 
     rewind(file);
     fclose(file);
 
-    print_element(begin_list);
-
     return begin_list;
-
 }
 
 List* creat_new_link(char c) {
@@ -57,15 +45,12 @@ List* creat_new_link(char c) {
     link->data = data;
     link->next = NULL;
     return link;
-
 }
 
 int verif_list(List* l, char c) {
     List* temp = l;
 
     while (temp != NULL) {
-        //printf("\n%c", c);
-        //printf("\n%c", (temp)->data->chara);
         if ((temp)->data->chara == c) {
             (temp)->data->occurence = (temp)->data->occurence + 1 ;
             return 1;
@@ -74,17 +59,3 @@ int verif_list(List* l, char c) {
     }
     return 0;
 }
-
-
-
-void print_element(List* l) {
-    List* temp = l;
-
-    while (temp != NULL) {
-        printf("Lettre : %c\n", temp->data->chara);
-        printf("Occurence : %d\n", temp->data->occurence);
-        temp = (temp)->next;
-    }
-}
-
-
