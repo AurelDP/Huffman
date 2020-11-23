@@ -21,7 +21,7 @@ typedef struct Tree {
 
 char* codage_huffman(Tree* arbre, char caractere, char* pile, int* i) {
 
-    char* temp;
+    char temp;
 
     if (arbre == NULL)
     {
