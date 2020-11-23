@@ -19,6 +19,6 @@ int size_text(FILE* file){
 }*/
 
 int main(){
-    text2binary();
+    //text2binary();
     occurence();
 }
