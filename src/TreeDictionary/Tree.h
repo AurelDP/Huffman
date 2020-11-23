@@ -60,13 +60,13 @@ void print_list_tree(ListTree* list);
 //-------------------------------------------------------------
 
 
-Data* min_list(ListTree* list);
+Node* min_list(ListTree** list);
 
 void suppr_min_list(ListTree** list, char c, int occ);
 
 int size_of_list(ListTree* list);
 
-Node* create_double_node(ListTree* list);
+Node* create_double_node(ListTree** list);
 
 void insert_node(ListTree** list, Node* node);
 

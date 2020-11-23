@@ -106,19 +106,19 @@ void print_list_tree(ListTree* list) {
 //-------------------------------------------------------------
 
 
-Data* min_list(ListTree* list) {
+Node* min_list(ListTree** list) {
 	ListTree* temp = NULL;
-	Data* mini = (Data*)malloc(sizeof(Data));
-	if (list != NULL) {
-		temp = list;
-		mini = temp->node->info;
+	Node* mini = (Node*)malloc(sizeof(Node));
+	if (*list != NULL) {
+		temp = *list;
+		mini = temp->node;
 		while (temp != NULL) {
-			if (mini->occurence > temp->node->info->occurence) {
-				mini = temp->node->info;
+			if (mini->info->occurence > temp->node->info->occurence) {
+				mini = temp->node;
 			}
 			temp = temp->next;
 		}
-		suppr_min_list(&list, mini->chara, mini->occurence);
+		suppr_min_list(list, mini->info->chara, mini->info->occurence);
 	}
 	else {
 		mini = NULL;
@@ -131,21 +131,12 @@ void suppr_min_list(ListTree** list, char c, int occ) {
 	if (*list != NULL) {
 		if ((*list)->node->info->chara == c && (*list)->node->info->occurence == occ) {
 			old = (*list);
-			(*list) = (*list)->next;
-			free(old);
-			suppr_min_list(list, c, occ);
-		}
-	}
-	/*
-	if ((*list)->next != NULL) {
-		suppr_min_list(&((*list)->next), c, occ);
-		if ((*list)->node->info->chara == c && (*list)->node->info->occurence == occ) {
-			old = (*list);
-			(*list) = (*list)->next;
+			*list = (*list)->next;
 			free(old);
 		}
+		if (*list != NULL)
+			suppr_min_list(&((*list)->next), c, occ);
 	}
-	*/
 }
 
 int size_of_list(ListTree* list) {
@@ -157,22 +148,16 @@ int size_of_list(ListTree* list) {
 	}
 }
 
-Node* create_double_node(ListTree* list) {
-	//printf("\n%c %d\n", list->node->info->chara, list->node->info->occurence);
+Node* create_double_node(ListTree** list) {
 	Node* new_node = (Node*)malloc(sizeof(Node));
-	Node* node_right = create_node(min_list(list));
-	Node* node_left = create_node(min_list(list));
+	Node* node_right = min_list(list);
+	Node* node_left = min_list(list);
 	Data* new_info = (Data*)malloc(sizeof(Data));
-	if (list != NULL) {
-		new_node->right = node_right;
-		new_node->left = node_left;
-		new_info->chara = NULL;
-		new_info->occurence = node_right->info->occurence + node_left->info->occurence;
-		new_node->info = new_info;
-	}
-	else {
-		new_node = NULL;
-	}
+	new_node->right = node_right;
+	new_node->left = node_left;
+	new_info->chara = NULL;
+	new_info->occurence = node_right->info->occurence + node_left->info->occurence;
+	new_node->info = new_info;
 	return new_node;
 }
 
@@ -187,8 +172,7 @@ Node* create_huffman_tree(ListTree** list) {
 	Node* tree = (Node*)malloc(sizeof(Node));
 	if (*list != NULL) {
 		while (size_of_list(*list) > 1) {
-			printf("%d\n", size_of_list(*list));
-			Node* new_node = create_double_node(*list);
+			Node* new_node = create_double_node(list);
 			insert_node(list, new_node);
 		}
 	}
