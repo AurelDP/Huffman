@@ -4,46 +4,6 @@
 
 
 //-------------------------------------------------------------
-// FONCTIONS DE CREATION DE LA LISTE (Rémi)
-//-------------------------------------------------------------
-
-
-Data* create_data(char c, int oc) {
-	Data* data = (Data*)malloc(sizeof(Data));
-	data->chara = c;
-	data->occurence = oc;
-	return data;
-}
-
-List* create_element(Data* data) {
-	List* el = (List*)malloc(sizeof(List));
-	el->data = data;
-	el->next = NULL;
-	return el;
-}
-
-List* create_list(int number) {
-	List* list = NULL;
-	List* temp = NULL;
-	if (number > 0) {
-		for (int i = 0; i < number; i++) {
-			if (i == 0) {
-				Data* data = create_data(i + 65, i + 1);
-				list = create_element(data);
-				temp = list;
-			}
-			else {
-				Data* data = create_data(i + 65, i + 1);
-				temp->next = create_element(data);
-				temp = temp->next;
-			}
-		}
-	}
-	return list;
-}
-
-
-//-------------------------------------------------------------
 // FONCTIONS DE TRANSFORMATION LISTE -> LISTE DE NOEUDS
 //-------------------------------------------------------------
 
@@ -107,13 +67,15 @@ Node* min_list(ListTree** list) {
 
 void suppr_min_list(ListTree** list, char c, int occ) {
 	ListTree* old = NULL;
+	int stop = 0;
 	if (*list != NULL) {
 		if ((*list)->node->info->chara == c && (*list)->node->info->occurence == occ) {
 			old = (*list);
 			*list = (*list)->next;
 			free(old);
+			stop = 1;
 		}
-		if (*list != NULL)
+		if (*list != NULL && stop == 0)
 			suppr_min_list(&((*list)->next), c, occ);
 	}
 }
@@ -157,32 +119,4 @@ Node* create_huffman_tree(ListTree** list) {
 	}
 	tree = (*list)->node;
 	return tree;
-}
-
-
-//-------------------------------------------------------------
-// FONCTIONS TEMPORAIRES D'AFFICHAGE
-//-------------------------------------------------------------
-
-
-void print_data(Data* data) {
-	printf("\n%c x %d", data->chara, data->occurence);
-}
-
-void print_list(List* list) {
-	printf("\nLISTE : \n");
-	while (list != NULL) {
-		print_data(list->data);
-		list = list->next;
-	}
-	printf("\n");
-}
-
-void print_list_tree(ListTree* list) {
-	printf("\nLISTE TREE : \n");
-	while (list != NULL) {
-		print_data(list->node->info);
-		list = list->next;
-	}
-	printf("\n");
 }

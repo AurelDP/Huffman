@@ -34,6 +34,7 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
     </ClInclude>
     <ClInclude Include="src\Occurences\Occurences.h" />
+    <ClInclude Include="src\Structures\Structures.h" />
     <ClInclude Include="src\TreeDictionary\Tree.h" />
   </ItemGroup>
   <ItemGroup>

@@ -1,16 +1,7 @@
 #ifndef OCCURENCES
 #define OCCURENCES
+#include "../Structures/Structures.h"
 
-typedef struct Data {
-    char chara;
-    int occurence;
-}Data;
-
-// Structure d'une liste
-typedef struct List {
-    struct Data* data;
-    struct List* next;
-}List;
 
 List* occurence();
 List* creat_new_link(char c);
