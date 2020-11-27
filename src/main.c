@@ -4,21 +4,6 @@
 #include "Occurences/Occurences.h"
 #include "TreeDictionary/Tree.h"
 
-/*int size_text(FILE* file);
-
-int size_text(FILE* file) {
-    int size = 0;
-    char c;
-    do {
-        c = fgetc(file);
-        if (c != EOF) {
-            size++;
-        }
-    } while (c != EOF);
-    rewind(file);
-    return size;
-}*/
-
 int main(){
     printf("Start encoding :\n\n");
     printf("Character recovery and classification...\n");

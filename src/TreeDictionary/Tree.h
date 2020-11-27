@@ -42,7 +42,5 @@ void free_list(List* l);
 
 void free_node(Node* node);
 
-void free_list_tree(ListTree* lt);
-
 
 #endif
