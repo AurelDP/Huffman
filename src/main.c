@@ -3,6 +3,7 @@
 #include "BinaryTranslation/BinaryTranslation.h"
 #include "Occurences/Occurences.h"
 #include "TreeDictionary/Tree.h"
+#include "TreeDictionary/Dictionary.h"
 
 /*int size_text(FILE* file);
 
