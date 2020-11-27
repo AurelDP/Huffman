@@ -33,4 +33,16 @@ void insert_node(ListTree** list, Node* node);
 Node* create_huffman_tree(ListTree** list);
 
 
+//-------------------------------------------------------------
+// FONCTIONS FREE
+//-------------------------------------------------------------
+
+
+void free_list(List* l);
+
+void free_node(Node* node);
+
+void free_list_tree(ListTree* lt);
+
+
 #endif

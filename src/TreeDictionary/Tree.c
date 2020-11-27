@@ -25,7 +25,7 @@ ListTree* create_list_tree(Data* info) {
 
 ListTree* transform_list(List* list) {
 	ListTree* new_list = NULL;
-	ListTree * temp = new_list;
+	ListTree* temp = new_list;
 	if (list != NULL) {
 		new_list = create_list_tree(list->data);
 		temp = new_list;
@@ -119,4 +119,35 @@ Node* create_huffman_tree(ListTree** list) {
 	}
 	tree = (*list)->node;
 	return tree;
+}
+
+
+//-------------------------------------------------------------
+// FONCTIONS FREE
+//-------------------------------------------------------------
+
+
+void free_list(List* l) {
+	if (l != NULL) {
+		free_list(l->next);
+		free(l);
+		// On utilise pas le free(l->data) ici car l'adresse de l->data est utilisée dans d'autres structures (arbre d'Huffman)
+	}
+}
+
+void free_node(Node* node) {
+	if (node != NULL) {
+		free_node(node->left);
+		free_node(node->right);
+		free(node->info);
+		free(node);
+	}
+}
+
+void free_list_tree(ListTree* lt) {
+	if (lt != NULL) {
+		free_list_tree(lt->next);
+		free_node(lt->node);
+		free(lt);
+	}
 }
