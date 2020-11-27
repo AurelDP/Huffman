@@ -8,7 +8,7 @@
 
 char* codage_huffman(Node* arbre, char caractere, char* pile, int i) {
 
-    char temp;
+    char* temp;
 
     if (arbre == NULL)
     {
@@ -35,9 +35,9 @@ char* codage_huffman(Node* arbre, char caractere, char* pile, int i) {
         i = i + 1;
 
         temp = pile;
-        strcat_s(pile,i, '0');
+        strcat_s(pile, i, '0');
         pile = codage_huffman(arbre->left, caractere, pile, i);
-        strcat_s(temp,i, '1');
+        strcat_s(temp, i, '1');
         pile = codage_huffman(arbre->right, caractere, temp, i);
     }
 }
