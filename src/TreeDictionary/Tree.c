@@ -25,7 +25,7 @@ ListTree* create_list_tree(Data* info) {
 
 ListTree* transform_list(List* list) {
 	ListTree* new_list = NULL;
-	ListTree * temp = new_list;
+	ListTree* temp = new_list;
 	if (list != NULL) {
 		new_list = create_list_tree(list->data);
 		temp = new_list;
@@ -47,7 +47,7 @@ ListTree* transform_list(List* list) {
 
 Node* min_list(ListTree** list) {
 	ListTree* temp = NULL;
-	Node* mini = (Node*)malloc(sizeof(Node));
+	Node* mini;
 	if (*list != NULL) {
 		temp = *list;
 		mini = temp->node;
@@ -110,7 +110,7 @@ void insert_node(ListTree** list, Node* node) {
 }
 
 Node* create_huffman_tree(ListTree** list) {
-	Node* tree = (Node*)malloc(sizeof(Node));
+	Node* tree;
 	if (*list != NULL) {
 		while (size_of_list(*list) > 1) {
 			Node* new_node = create_double_node(list);
@@ -119,4 +119,26 @@ Node* create_huffman_tree(ListTree** list) {
 	}
 	tree = (*list)->node;
 	return tree;
+}
+
+
+//-------------------------------------------------------------
+// FONCTIONS FREE
+//-------------------------------------------------------------
+
+
+void free_list(List* l) {
+	if (l != NULL) {
+		free_list(l->next);
+		free(l);
+	}
+}
+
+void free_node(Node* node) {
+	if (node != NULL) {
+		free_node(node->left);
+		free_node(node->right);
+		free(node->info);
+		free(node);
+	}
 }
