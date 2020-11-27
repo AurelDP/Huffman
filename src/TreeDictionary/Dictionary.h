@@ -1,19 +1,9 @@
 #ifndef DICTIONARY
 #define DICTIONARY
+#include "../Structures/Structures.h"
 
-typedef struct Element {
-    int number;
-    char character;
-    struct Element* next;
-} Element;
 
-typedef struct Tree {
-    struct Data* info;
-    struct Tree* right;
-    struct Tree* left;
-}Tree;
-
-char* codage_huffman(Tree* arbre, char caractere, char* pile, int* i);
-void create_dico();
+char* codage_huffman(Node* arbre, char caractere, char* pile, int* i);
+void create_dico(Node* arbre, List* liste);
 
 #endif

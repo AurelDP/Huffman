@@ -3,9 +3,10 @@
 #include <string.h>
 #include "Dictionary.h"
 
+
 ///Question E
 
-char* codage_huffman(Tree* arbre, char caractere, char* pile, int* i) {
+char* codage_huffman(Node* arbre, char caractere, char* pile, int i) {
 
     char temp;
 
@@ -15,54 +16,50 @@ char* codage_huffman(Tree* arbre, char caractere, char* pile, int* i) {
         return NULL;
     }
 
-    pile = (char*)realloc(pile, sizeof(char) * i);
+    pile = (char*)realloc(pile, i *sizeof(char));
 
     if (arbre->left->info == caractere)
     {   
-        strcat(pile, '0');
+        strcat_s(pile,i, '0');
         return pile;
     }
 
-    if (arbre->right->info == caractere)
+    else if (arbre->right->info == caractere)
     {
-        strcat(pile, '1');
+        strcat_s(pile,i, '1');
         return pile;
     }
 
-    i = i + 1;
+    else {
 
-    temp = pile;
-    strcat(pile, '0');
-    codage_huffman(arbre->left, caractere, pile, i);
-    strcat(temp, '1');
-    codage_huffman(arbre->right, caractere, temp, i);
+        i = i + 1;
+
+        temp = pile;
+        strcat_s(pile,i, '0');
+        pile = codage_huffman(arbre->left, caractere, pile, i);
+        strcat_s(temp,i, '1');
+        pile = codage_huffman(arbre->right, caractere, temp, i);
+    }
 }
 
 
-void create_dico() {
+void create_dico(Node* arbre, List* liste) {
+    FILE* file;
+    fopen_s(&file, "Files/dico.txt", "w");// [w] vide fichier si existant 
 
-    FILE* file = fopen("Files/dico.txt", "w");// [w] vide fichier si existant 
-
-        
-    Element* liste;
-    Tree* arbre;
     char* pile;
 
     pile = (char*)malloc(sizeof(char));// creation chaine de caractère qui sera composé de 0 et 1
-    liste = list_huffman();// liste chainee de Caractere.
-    arbre = tree_occurence(liste);// Question D
 
     while (liste != NULL)
     {
         pile = NULL;
-        codage_huffman(arbre, liste->character, pile, 1);
-        fprintf(file, "%c : ", liste->character);
+        codage_huffman(arbre, liste->data->chara, pile, 1);
+        fprintf(file, "%c : ", liste->data->chara);
         fprintf(file, "%c", pile);
         fputs("\n", file);
         liste = liste->next;
     }
 
-    free_arbre(arbre);// cree fonction free un arbre
-    free_element(liste);// cree fonction free un element
     fclose(file);
 }

@@ -27,6 +27,8 @@ int main(){
     ListTree* list_tree = transform_list(list);
     printf("Creation of the Huffman tree...\n");
     Node* huffman_tree = create_huffman_tree(&list_tree);
+    create_dico(huffman_tree, list);
+
     free(list);
     free(list_tree);
     printf("Encoding complete !\n\n");
