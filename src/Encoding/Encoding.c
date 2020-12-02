@@ -3,8 +3,6 @@
 #include "Encoding.h"
 
 
-
-
 int Encod()
 {
     int i = 1;
@@ -55,3 +53,4 @@ int Encod()
 
     return 0;
 }
+
