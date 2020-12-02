@@ -7,9 +7,9 @@
 
 int Encod()
 {
-    int i = 2;
+    int i = 1;
     FILE* fichier = NULL;
-    char* caractereActuel = 0;
+    char* caractereActuel = (char*)malloc(sizeof(char));
     char caractere;
     ListDico* Recup;
     Recup = malloc(sizeof(ListDico));
@@ -20,7 +20,7 @@ int Encod()
     if (fichier != NULL)
     {
         caractere = fgetc(fichier); // On lit le caractère
-        caractereActuel = caractere;
+        caractereActuel[0] = caractere;
 
         while (caractereActuel != EOF)
         {
@@ -34,9 +34,9 @@ int Encod()
                         i = 1;
                     }
                     else{
-                    caractereActuel = realloc(caractereActuel ,i * sizeof(char));
-                    caractereActuel = caractereActuel + caractere;
                     i += 1;
+                    caractereActuel = realloc(caractereActuel ,i * sizeof(char));
+                    caractereActuel[i-1] = caractere;
                     }
                 }
                 else {
