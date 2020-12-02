@@ -28,7 +28,7 @@ typedef struct Node {
 
 typedef struct ListDico {
 	char lettre;
-	char code;
+	char* code;
 	struct ListDico* next;
 }ListDico;
 
