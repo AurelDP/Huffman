@@ -3,6 +3,6 @@
 #include "../Structures/Structures.h"
 
 
-void Encod();
+int Encod();
 
 #endif

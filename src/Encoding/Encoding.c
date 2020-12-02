@@ -20,16 +20,15 @@ int Encod()
         caractere = fgetc(fichier); // On lit le caractère
         caractereActuel[0] = caractere;
 
-        while (caractereActuel != EOF)
+        while (caractere != EOF)
         {
                 caractere = fgetc(fichier);
-
+                //printf("%c", caractere);
                 if (caractere != '\n'){
                     if (caractere == ':') {
-                        Recup->lettre = caractereActuel;
-                        printf("%c", Recup->lettre); // On l'affiche
+                        Recup->lettre = caractereActuel[i-1];
+                        //printf("%c", Recup->lettre); // On l'affiche
                         caractereActuel = NULL;
-                        i = 1;
                     }
                     else{
                     i += 1;
@@ -38,7 +37,10 @@ int Encod()
                     }
                 }
                 else {
-                    Recup->code = caractereActuel;
+                    Recup->code = malloc(i * sizeof(char));
+                    for (int y = 0; y < i; y++) {
+                        Recup->code = Recup->code + caractereActuel[y];
+                    }
                     ListDico* Recup2 = NULL;
                     Recup2 = malloc(sizeof(ListDico));
                     Recup->next = Recup2;
