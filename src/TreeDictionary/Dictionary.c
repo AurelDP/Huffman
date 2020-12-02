@@ -81,6 +81,7 @@ int find_path(Node* tree, char c, char** path, int i) {
             printf("\n nouvelle taille = %d\n", (strlen(*path) + 2) * sizeof(char));
             *path = (char*)realloc(*path, (strlen(*path) + 2) * sizeof(char));
             *path[u] = '1';
+            printf("\n0 = %c, 1 = %c\n", *path[u], *path[u + 1]);
             printf("Indice du \\0 : %d\n", u + 1);
             *path[u + 1] = '\0';
             u = 0;
@@ -93,6 +94,7 @@ int find_path(Node* tree, char c, char** path, int i) {
             }
             *path = (char*)realloc(*path, (strlen(*path) + 2) * sizeof(char));
             *path[u] = '0';
+            printf("\n0 = %c, 1 = %c\n", *path[u], *path[u+1]);
             *path[u + 1] = '\0';
             u = 0;
             //strcat(path, "0");
