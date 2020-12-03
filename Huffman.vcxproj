@@ -28,6 +28,7 @@
     </ClCompile>
     <ClCompile Include="src\Occurences\Occurences.c" />
     <ClCompile Include="src\TreeDictionary\Tree.c" />
+    <ClCompile Include="src\TreeDictionary\Dictionary.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\BinaryTranslation\BinaryTranslation.h">
@@ -36,6 +37,7 @@
     <ClInclude Include="src\Occurences\Occurences.h" />
     <ClInclude Include="src\Structures\Structures.h" />
     <ClInclude Include="src\TreeDictionary\Tree.h" />
+    <ClInclude Include="src\TreeDictionary\Dictionary.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\TreeDictionary\.gitkeep" />

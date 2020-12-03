@@ -3,6 +3,7 @@
 #include "BinaryTranslation/BinaryTranslation.h"
 #include "Occurences/Occurences.h"
 #include "TreeDictionary/Tree.h"
+#include "TreeDictionary/Dictionary.h"
 
 int main(){
     printf("Start encoding :\n\n");
@@ -11,8 +12,9 @@ int main(){
     ListTree* list_tree = transform_list(list);
     printf("Creation of the Huffman tree...\n");
     Node* huffman_tree = create_huffman_tree(&list_tree);
+    printf("Creation of the dictionary...\n");
+    create_dictio(huffman_tree, list);
     free_list(list);
-    free(list_tree);
     free_node(huffman_tree);
     printf("Encoding complete !\n\n");
     exit(0);
