@@ -41,7 +41,7 @@ void create_dictio(Node* tree, List* l) {
         path[0] = '\0';
         find_path(tree, l->data->chara, &path);
         strrev(path);
-        fprintf(file, "%c : ", l->data->chara);
+        fprintf(file, "%c:", l->data->chara);
         fprintf(file, "%s\n", path);
         l = l->next;
     }
