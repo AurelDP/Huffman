@@ -1,0 +1,263 @@
+\hypertarget{_tree_8h}{}\doxysection{C\+:/\+Users/cliele/\+Documents/\+Git\+Hub/\+Huffman/src/\+Tree\+Dictionary/\+Tree.h File Reference}
+\label{_tree_8h}\index{C:/Users/cliele/Documents/GitHub/Huffman/src/TreeDictionary/Tree.h@{C:/Users/cliele/Documents/GitHub/Huffman/src/TreeDictionary/Tree.h}}
+
+
+Header file containing the Huffman tree generation functions.  
+
+
+{\ttfamily \#include \char`\"{}../\+Structures/\+Structures.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{_tree_8h_acfe4cd8c92f7f171308d2cbacfe39735}{create\+\_\+node}} (\mbox{\hyperlink{struct_data}{Data}} $\ast$info)
+\begin{DoxyCompactList}\small\item\em \mbox{\hyperlink{struct_node}{Node}} creation function. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$ \mbox{\hyperlink{_tree_8h_a5435747e42f5f6681fbe22d96daee250}{create\+\_\+list\+\_\+tree}} (\mbox{\hyperlink{struct_data}{Data}} $\ast$info)
+\begin{DoxyCompactList}\small\item\em Function to create an element containing a node and a pointer to the following element. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$ \mbox{\hyperlink{_tree_8h_abb5cc00ade1dffcf9c4ed39f7de30d3d}{transform\+\_\+list}} (\mbox{\hyperlink{struct_list}{List}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Function to transform a list of data into a list of nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{_tree_8h_a7d18d3a4e810ab4fb8c2da00914e2c4a}{min\+\_\+list}} (\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$list)
+\begin{DoxyCompactList}\small\item\em Function that returns the minimum of a list of nodes. Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_tree_8h_a730a33075167438cc4fa5a9ade4d2cad}{suppr\+\_\+min\+\_\+list}} (\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$list, char c, int occ)
+\begin{DoxyCompactList}\small\item\em Deletes an item from a list based on its information. Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_tree_8h_aee2096b2eb95717e4ee9961c70a2a819}{size\+\_\+of\+\_\+list}} (\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$list)
+\begin{DoxyCompactList}\small\item\em Simple function that gives the size of a list of nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{_tree_8h_ad9b62304c1e4bac769b3b4c3a21fabe6}{create\+\_\+double\+\_\+node}} (\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$list)
+\begin{DoxyCompactList}\small\item\em Function to create a node from two old nodes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_tree_8h_a82055fa6b4d10f3b07e047d26ae8ee6e}{insert\+\_\+node}} (\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$list, \mbox{\hyperlink{struct_node}{Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Function used to insert a node in a list of nodes. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node}{Node}} $\ast$ \mbox{\hyperlink{_tree_8h_ad878cf159d113a008cd1520b6f6f2dd6}{create\+\_\+huffman\+\_\+tree}} (\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$list)
+\begin{DoxyCompactList}\small\item\em Huffman tree creation function. Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_tree_8h_ac8e417f93d8ec556ed7646ab1c6f653b}{free\+\_\+list}} (\mbox{\hyperlink{struct_list}{List}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Simple function for free a list. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_tree_8h_a0aed6fd8e764732bb5533b022394c0eb}{free\+\_\+node}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Simple function for free a node. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file containing the Huffman tree generation functions. 
+
+\begin{DoxyAuthor}{Author}
+Aurelien D\+U\+V\+AL \href{mailto:aurelien.duval.19@efrei.net}{\texttt{ aurelien.\+duval.\+19@efrei.\+net}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+December 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_tree_8h_ad9b62304c1e4bac769b3b4c3a21fabe6}\label{_tree_8h_ad9b62304c1e4bac769b3b4c3a21fabe6}} 
+\index{Tree.h@{Tree.h}!create\_double\_node@{create\_double\_node}}
+\index{create\_double\_node@{create\_double\_node}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{create\_double\_node()}{create\_double\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+\_\+double\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Function to create a node from two old nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em List\+Tree$\ast$$\ast$} & list, the initial list containing all nodes. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$, the new node created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_ad878cf159d113a008cd1520b6f6f2dd6}\label{_tree_8h_ad878cf159d113a008cd1520b6f6f2dd6}} 
+\index{Tree.h@{Tree.h}!create\_huffman\_tree@{create\_huffman\_tree}}
+\index{create\_huffman\_tree@{create\_huffman\_tree}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{create\_huffman\_tree()}{create\_huffman\_tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+\_\+huffman\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Huffman tree creation function. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_node}{Node}}* huffman\_tree = \mbox{\hyperlink{_tree_8h_ad878cf159d113a008cd1520b6f6f2dd6}{create\_huffman\_tree}}(\&list\_tree);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em List\+Tree$\ast$$\ast$} & list, list from which the Huffman tree is created. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$, the new Huffman tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_a5435747e42f5f6681fbe22d96daee250}\label{_tree_8h_a5435747e42f5f6681fbe22d96daee250}} 
+\index{Tree.h@{Tree.h}!create\_list\_tree@{create\_list\_tree}}
+\index{create\_list\_tree@{create\_list\_tree}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{create\_list\_tree()}{create\_list\_tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_list_tree}{List\+Tree}}$\ast$ create\+\_\+list\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_data}{Data}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+Function to create an element containing a node and a pointer to the following element. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data$\ast$} & info, the information to be contained in the node of the new element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List\+Tree$\ast$, the new element created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_acfe4cd8c92f7f171308d2cbacfe39735}\label{_tree_8h_acfe4cd8c92f7f171308d2cbacfe39735}} 
+\index{Tree.h@{Tree.h}!create\_node@{create\_node}}
+\index{create\_node@{create\_node}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{create\_node()}{create\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ create\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_data}{Data}} $\ast$}]{info }\end{DoxyParamCaption})}
+
+
+
+\mbox{\hyperlink{struct_node}{Node}} creation function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Data$\ast$} & info, the information to be contained in the new node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$, the new node created. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_ac8e417f93d8ec556ed7646ab1c6f653b}\label{_tree_8h_ac8e417f93d8ec556ed7646ab1c6f653b}} 
+\index{Tree.h@{Tree.h}!free\_list@{free\_list}}
+\index{free\_list@{free\_list}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{free\_list()}{free\_list()}}
+{\footnotesize\ttfamily void free\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Simple function for free a list. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em List$\ast$} & l, the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_a0aed6fd8e764732bb5533b022394c0eb}\label{_tree_8h_a0aed6fd8e764732bb5533b022394c0eb}} 
+\index{Tree.h@{Tree.h}!free\_node@{free\_node}}
+\index{free\_node@{free\_node}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{free\_node()}{free\_node()}}
+{\footnotesize\ttfamily void free\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Simple function for free a node. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Node$\ast$} & node, the node. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_a82055fa6b4d10f3b07e047d26ae8ee6e}\label{_tree_8h_a82055fa6b4d10f3b07e047d26ae8ee6e}} 
+\index{Tree.h@{Tree.h}!insert\_node@{insert\_node}}
+\index{insert\_node@{insert\_node}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{insert\_node()}{insert\_node()}}
+{\footnotesize\ttfamily void insert\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$}]{list,  }\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Function used to insert a node in a list of nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em List\+Tree$\ast$$\ast$} & list, the initial list containing all nodes. \\
+\hline
+{\em Node$\ast$} & node, the node to insert. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_a7d18d3a4e810ab4fb8c2da00914e2c4a}\label{_tree_8h_a7d18d3a4e810ab4fb8c2da00914e2c4a}} 
+\index{Tree.h@{Tree.h}!min\_list@{min\_list}}
+\index{min\_list@{min\_list}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{min\_list()}{min\_list()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node}{Node}}$\ast$ min\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Function that returns the minimum of a list of nodes. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_node}{Node}}* node\_left = \mbox{\hyperlink{_tree_8h_a7d18d3a4e810ab4fb8c2da00914e2c4a}{min\_list}}(list);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em List\+Tree$\ast$$\ast$} & list, initial list of which we want to find and delete the minimum. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node$\ast$, the minimum node found. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_aee2096b2eb95717e4ee9961c70a2a819}\label{_tree_8h_aee2096b2eb95717e4ee9961c70a2a819}} 
+\index{Tree.h@{Tree.h}!size\_of\_list@{size\_of\_list}}
+\index{size\_of\_list@{size\_of\_list}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{size\_of\_list()}{size\_of\_list()}}
+{\footnotesize\ttfamily int size\+\_\+of\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Simple function that gives the size of a list of nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em List\+Tree$\ast$} & list, the list. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int, the size of the list. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_a730a33075167438cc4fa5a9ade4d2cad}\label{_tree_8h_a730a33075167438cc4fa5a9ade4d2cad}} 
+\index{Tree.h@{Tree.h}!suppr\_min\_list@{suppr\_min\_list}}
+\index{suppr\_min\_list@{suppr\_min\_list}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{suppr\_min\_list()}{suppr\_min\_list()}}
+{\footnotesize\ttfamily void suppr\+\_\+min\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$$\ast$}]{list,  }\item[{char}]{c,  }\item[{int}]{occ }\end{DoxyParamCaption})}
+
+
+
+Deletes an item from a list based on its information. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_tree_8h_a730a33075167438cc4fa5a9ade4d2cad}{suppr\_min\_list}}(\&((*list)-\/>next), c, occ);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em List\+Tree$\ast$$\ast$} & list, list in which we want to remove the item. \\
+\hline
+{\em char} & c, information on the item to be deleted. \\
+\hline
+{\em int} & occ, information on the item to be deleted. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_tree_8h_abb5cc00ade1dffcf9c4ed39f7de30d3d}\label{_tree_8h_abb5cc00ade1dffcf9c4ed39f7de30d3d}} 
+\index{Tree.h@{Tree.h}!transform\_list@{transform\_list}}
+\index{transform\_list@{transform\_list}!Tree.h@{Tree.h}}
+\doxysubsubsection{\texorpdfstring{transform\_list()}{transform\_list()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_list_tree}{List\+Tree}}$\ast$ transform\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{list }\end{DoxyParamCaption})}
+
+
+
+Function to transform a list of data into a list of nodes. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em List$\ast$} & list, the list to be transformed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+List\+Tree$\ast$, the new list. 
+\end{DoxyReturn}
