@@ -6,34 +6,32 @@
 void encod() {
 
     FILE* input = fopen("Files/input.txt", "r");
-    FILE* output = fopen("Files/output.txt", "w");
+    FILE* output = fopen("Files/huffman.txt", "w");
     FILE* dico = fopen("Files/dico.txt", "r");
 
-    char caractere;
-    char car;
-    char ca;
-    int i = 0;
+    char charInput;
+    char charDico;
+    char charLine;
     int stop = 0;
 
-    while ((caractere = fgetc(input)) != EOF)
+    while ((charInput = fgetc(input)) != EOF)
     {
         stop = 0;
-        i++;
 
-        while ((car = fgetc(dico)) != EOF && stop == 0)
+        while ((charDico = fgetc(dico)) != EOF && stop == 0)
         {
-            if ((car == caractere))
+            if ((charDico == charInput))
             {
                 fseek(dico, 1, SEEK_CUR);
-                while ((ca = fgetc(dico)) != '\n')
+                while ((charLine = fgetc(dico)) != '\n')
                 {
-                    fputc(ca, output);
+                    fputc(charLine, output); // On peut mettre les '010..' dans une chaine et seulement le push dans le fichier à la fin (ça optimisera un peu surement)
                 }
                 stop = 1;
             }
             else
             {
-                while ((ca = fgetc(dico)) != '\n')
+                while ((charLine = fgetc(dico)) != '\n')
                 {
                     fseek(dico, 1, SEEK_CUR);
                 }
