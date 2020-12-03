@@ -51,4 +51,7 @@
   <ItemGroup>
     <None Include="src\TreeDictionary\.gitkeep" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Files\output.txt" />
+  </ItemGroup>
 </Project>

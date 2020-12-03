@@ -3,56 +3,50 @@
 #include "Encoding.h"
 
 
-int Encod()
-{
-    int i = 1;
-    FILE* fichier = NULL;
-    char* caractereActuel = (char*)malloc(sizeof(char));
+void encod() {
+
+    FILE* input = fopen("Files/input.txt", "r");
+    FILE* output = fopen("Files/output.txt", "w");
+    FILE* dico = fopen("Files/dico.txt", "r");
+
+
     char caractere;
-    ListDico* Recup;
-    Recup = malloc(sizeof(ListDico));
-    fichier = fopen("Files/dico.txt", "r");
+    char car;
+    char ca;
+    int i = 0;
+    int stop = 0;
 
-    
 
-    if (fichier != NULL)
+    while ((caractere = fgetc(input)) != EOF)
     {
-        caractere = fgetc(fichier); // On lit le caractère
-        caractereActuel[0] = caractere;
-
-        while (caractere != EOF)
+        stop = 0;
+        printf("\n(%c) , ", caractere);
+        i++;
+        while ((car = fgetc(dico)) != EOF && stop==0)
         {
-                caractere = fgetc(fichier);
-                //printf("%c", caractere);
-                if (caractere != '\n'){
-                    if (caractere == ':') {
-                        Recup->lettre = caractereActuel[i-1];
-                        //printf("%c", Recup->lettre); // On l'affiche
-                        caractereActuel = NULL;
-                    }
-                    else{
-                    i += 1;
-                    caractereActuel = realloc(caractereActuel ,i * sizeof(char));
-                    caractereActuel[i-1] = caractere;
-                    }
+            printf("%c", car);
+            if ((car == caractere))
+            {
+                fseek(dico, 1, SEEK_CUR);
+                while ((ca = fgetc(dico)) != '\n')
+                {
+                    printf("\n%c\n", ca);
+                    fputc(ca, output);
                 }
-                else {
-                    Recup->code = malloc(i * sizeof(char));
-                    for (int y = 0; y < i; y++) {
-                        Recup->code = Recup->code + caractereActuel[y];
-                    }
-                    ListDico* Recup2 = NULL;
-                    Recup2 = malloc(sizeof(ListDico));
-                    Recup->next = Recup2;
-                    Recup = Recup->next;
-                    caractereActuel = NULL;
-                    i = 1;
+                stop = 1;
+            }
+            else
+            {
+                while ((ca = fgetc(dico)) != '\n')
+                {
+                    fseek(dico, 1, SEEK_CUR);
                 }
-        } 
+            }
 
-        fclose(fichier);
+        }
+        rewind(dico);
     }
-
-    return 0;
+    fclose(output);
+    fclose(input);
+    fclose(dico);
 }
-
