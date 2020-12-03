@@ -1,0 +1,79 @@
+\hypertarget{_dictionary_8h}{}\doxysection{C\+:/\+Users/cliele/\+Documents/\+Git\+Hub/\+Huffman/src/\+Tree\+Dictionary/\+Dictionary.h File Reference}
+\label{_dictionary_8h}\index{C:/Users/cliele/Documents/GitHub/Huffman/src/TreeDictionary/Dictionary.h@{C:/Users/cliele/Documents/GitHub/Huffman/src/TreeDictionary/Dictionary.h}}
+
+
+Header file containing the dictionary generation functions.  
+
+
+{\ttfamily \#include \char`\"{}../\+Structures/\+Structures.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_dictionary_8h_a63b7963c9a1e8b5ee625b8f2ac7ef0f4}{find\+\_\+path}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree, char c, char $\ast$$\ast$path)
+\begin{DoxyCompactList}\small\item\em Function that returns a string of characters consisting of 0 or 1 depending on the path taken to arrive at a given character. Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_dictionary_8h_a2061c341341751829db6d3c992e81f24}{create\+\_\+dictio}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree, \mbox{\hyperlink{struct_list}{List}} $\ast$l)
+\begin{DoxyCompactList}\small\item\em Dictionary creation function. Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file containing the dictionary generation functions. 
+
+\begin{DoxyAuthor}{Author}
+Aurelien D\+U\+V\+AL \href{mailto:aurelien.duval.19@efrei.net}{\texttt{ aurelien.\+duval.\+19@efrei.\+net}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+December 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_dictionary_8h_a2061c341341751829db6d3c992e81f24}\label{_dictionary_8h_a2061c341341751829db6d3c992e81f24}} 
+\index{Dictionary.h@{Dictionary.h}!create\_dictio@{create\_dictio}}
+\index{create\_dictio@{create\_dictio}!Dictionary.h@{Dictionary.h}}
+\doxysubsubsection{\texorpdfstring{create\_dictio()}{create\_dictio()}}
+{\footnotesize\ttfamily void create\+\_\+dictio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree,  }\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{l }\end{DoxyParamCaption})}
+
+
+
+Dictionary creation function. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_dictionary_8h_a2061c341341751829db6d3c992e81f24}{create\_dictio}}(huffman\_tree, list)}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em Node$\ast$} & tree, Huffman tree. \\
+\hline
+{\em List$\ast$} & l, list of characters in the text file. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_dictionary_8h_a63b7963c9a1e8b5ee625b8f2ac7ef0f4}\label{_dictionary_8h_a63b7963c9a1e8b5ee625b8f2ac7ef0f4}} 
+\index{Dictionary.h@{Dictionary.h}!find\_path@{find\_path}}
+\index{find\_path@{find\_path}!Dictionary.h@{Dictionary.h}}
+\doxysubsubsection{\texorpdfstring{find\_path()}{find\_path()}}
+{\footnotesize\ttfamily int find\+\_\+path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree,  }\item[{char}]{c,  }\item[{char $\ast$$\ast$}]{path }\end{DoxyParamCaption})}
+
+
+
+Function that returns a string of characters consisting of 0 or 1 depending on the path taken to arrive at a given character. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{_dictionary_8h_a63b7963c9a1e8b5ee625b8f2ac7ef0f4}{find\_path}}(tree-\/>right, c, path)) \{}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em Node$\ast$} & tree, Huffman tree. \\
+\hline
+{\em char} & c, character to search. \\
+\hline
+{\em char$\ast$$\ast$} & path, string to be modified when the character has been found. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int i, 1 if the current character is the right one, 0 otherwise. 
+\end{DoxyReturn}
