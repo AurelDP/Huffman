@@ -17,5 +17,6 @@ int main(){
     free_list(list);
     free_node(huffman_tree);
     printf("Encoding complete !\n\n");
+    encod();
     exit(0);
 }
