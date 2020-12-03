@@ -4,8 +4,10 @@
 #include "Occurences/Occurences.h"
 #include "TreeDictionary/Tree.h"
 #include "TreeDictionary/Dictionary.h"
+#include "Encoding/Encoding.h"
 
 int main(){
+    text2binary();
     printf("Start encoding :\n\n");
     printf("Character recovery and classification...\n");
     List* list = occurence();
@@ -14,6 +16,8 @@ int main(){
     Node* huffman_tree = create_huffman_tree(&list_tree);
     printf("Creation of the dictionary...\n");
     create_dictio(huffman_tree, list);
+    printf("Encoding...\n");
+    encod();
     free_list(list);
     free_node(huffman_tree);
     printf("Encoding complete !\n\n");

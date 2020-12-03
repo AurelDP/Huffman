@@ -26,4 +26,10 @@ typedef struct Node {
 	struct Node* left;
 }Node;
 
+typedef struct ListDico {
+	char lettre;
+	char* code;
+	struct ListDico* next;
+}ListDico;
+
 #endif
