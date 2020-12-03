@@ -12,6 +12,7 @@ int main(){
     ListTree* list_tree = transform_list(list);
     printf("Creation of the Huffman tree...\n");
     Node* huffman_tree = create_huffman_tree(&list_tree);
+    printf("Creation of the dictionary...\n");
     create_dictio(huffman_tree, list);
     free_list(list);
     free_node(huffman_tree);

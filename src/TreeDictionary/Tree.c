@@ -96,7 +96,7 @@ Node* create_double_node(ListTree** list) {
 	Data* new_info = (Data*)malloc(sizeof(Data));
 	new_node->right = node_right;
 	new_node->left = node_left;
-	new_info->chara = NULL;
+	new_info->chara = '\0';
 	new_info->occurence = node_right->info->occurence + node_left->info->occurence;
 	new_node->info = new_info;
 	return new_node;

@@ -5,23 +5,23 @@
 #include "Dictionary.h"
 
 
-int find_path(Node* tree, char c, char** path, int i) {
-    int u = 0;
+int find_path(Node* tree, char c, char** path) {
     if (tree == NULL) {
         return 0;
     }
     else {
         if (tree->info->chara == c) {
-            *path = (char*)realloc(*path, sizeof(char));
+            *path = (char*)realloc(*path, 1);
+            *path[0] = '\0';
             return 1;
         }
-        else if (find_path(tree->right, c, path, i + 1)) {
-            *path = (char*)realloc(*path, (strlen(*path) + 2) * sizeof(char));
+        else if (find_path(tree->right, c, path)) {
+            *path = (char*)realloc(*path, strlen(*path) + 2);
             strcat(*path, "1");
             return 1;
         }
-        else if (find_path(tree->left, c, path, i + 1)) {
-            *path = (char*)realloc(*path, (strlen(*path) + 2) * sizeof(char));
+        else if (find_path(tree->left, c, path)) {
+            *path = (char*)realloc(*path, strlen(*path) + 2);
             strcat(*path, "0");
             return 1;
         }
@@ -33,15 +33,14 @@ int find_path(Node* tree, char c, char** path, int i) {
 
 void create_dictio(Node* tree, List* l) {
     FILE* file;
-    char* path = (char*)malloc(sizeof(char));
+    char* path = (char*)malloc(1);
 
-    fopen_s(&file, "Files/dico.txt", "w");
+    file = fopen("Files/dico.txt", "w");
 
     while (l != NULL) {
-        path = realloc(path, sizeof(char));
-        path = '\0';
-        find_path(tree, l->data->chara, &path, 1);
-        printf("\n\nPath : %s\n\n", path);
+        path[0] = '\0';
+        find_path(tree, l->data->chara, &path);
+        strrev(path);
         fprintf(file, "%c : ", l->data->chara);
         fprintf(file, "%s\n", path);
         l = l->next;
