@@ -19,12 +19,12 @@ List* occurence() {
             if (verif_list(begin_list, c) == 0) {
 
                 if (i == 0) {
-                    begin_list = creat_new_link(c);
+                    begin_list = create_new_link(c);
                     temp = begin_list;
                     i++;
                 }
                 else {
-                    temp->next = creat_new_link(c);
+                    temp->next = create_new_link(c);
                     temp = temp->next;
                 }
             }
@@ -37,7 +37,7 @@ List* occurence() {
     return begin_list;
 }
 
-List* creat_new_link(char c) {
+List* create_new_link(char c) {
     List* link = malloc(sizeof(List));
     Data* data= malloc(sizeof(Data));
     data->chara = c;
