@@ -1,0 +1,99 @@
+\hypertarget{_occurences_8h}{}\doxysection{C\+:/\+Users/cliele/\+Documents/\+Git\+Hub/\+Huffman/src/\+Occurences/\+Occurences.h File Reference}
+\label{_occurences_8h}\index{C:/Users/cliele/Documents/GitHub/Huffman/src/Occurences/Occurences.h@{C:/Users/cliele/Documents/GitHub/Huffman/src/Occurences/Occurences.h}}
+
+
+Header file grouping together the functions for classifying the characters of a text file.  
+
+
+{\ttfamily \#include \char`\"{}../\+Structures/\+Structures.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct_list}{List}} $\ast$ \mbox{\hyperlink{_occurences_8h_a277033ed6f3ec689cf8e31d7fa266b65}{occurence}} ()
+\begin{DoxyCompactList}\small\item\em Function to create a list of data from a text file. Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_list}{List}} $\ast$ \mbox{\hyperlink{_occurences_8h_ab046083bfed9476b1c721d11c8502953}{create\+\_\+new\+\_\+link}} (char c)
+\begin{DoxyCompactList}\small\item\em Creates an element of a list from a character and returns it. Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_occurences_8h_a9559dd37b63bcff706c405ff914bfa30}{verif\+\_\+list}} (\mbox{\hyperlink{struct_list}{List}} $\ast$l, char c)
+\begin{DoxyCompactList}\small\item\em Checks if the character is already in the list. Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file grouping together the functions for classifying the characters of a text file. 
+
+\begin{DoxyAuthor}{Author}
+Remi P\+A\+U\+C\+T\+ON \href{mailto:remi.paucton@efrei.net}{\texttt{ remi.\+paucton@efrei.\+net}} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+December 2020 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_occurences_8h_ab046083bfed9476b1c721d11c8502953}\label{_occurences_8h_ab046083bfed9476b1c721d11c8502953}} 
+\index{Occurences.h@{Occurences.h}!create\_new\_link@{create\_new\_link}}
+\index{create\_new\_link@{create\_new\_link}!Occurences.h@{Occurences.h}}
+\doxysubsubsection{\texorpdfstring{create\_new\_link()}{create\_new\_link()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_list}{List}}$\ast$ create\+\_\+new\+\_\+link (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Creates an element of a list from a character and returns it. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{temp-\/>next = \mbox{\hyperlink{_occurences_8h_ab046083bfed9476b1c721d11c8502953}{create\_new\_link}}(c);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em char} & c, character to put in the new element. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The new element containing the character and an occurrence of 1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_occurences_8h_a277033ed6f3ec689cf8e31d7fa266b65}\label{_occurences_8h_a277033ed6f3ec689cf8e31d7fa266b65}} 
+\index{Occurences.h@{Occurences.h}!occurence@{occurence}}
+\index{occurence@{occurence}!Occurences.h@{Occurences.h}}
+\doxysubsubsection{\texorpdfstring{occurence()}{occurence()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_list}{List}}$\ast$ occurence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Function to create a list of data from a text file. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{struct_list}{List}}* list = \mbox{\hyperlink{_occurences_8h_a277033ed6f3ec689cf8e31d7fa266b65}{occurence}}();}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em Nothing.} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A list of data. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_occurences_8h_a9559dd37b63bcff706c405ff914bfa30}\label{_occurences_8h_a9559dd37b63bcff706c405ff914bfa30}} 
+\index{Occurences.h@{Occurences.h}!verif\_list@{verif\_list}}
+\index{verif\_list@{verif\_list}!Occurences.h@{Occurences.h}}
+\doxysubsubsection{\texorpdfstring{verif\_list()}{verif\_list()}}
+{\footnotesize\ttfamily int verif\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{l,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Checks if the character is already in the list. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{_occurences_8h_a9559dd37b63bcff706c405ff914bfa30}{verif\_list}}(begin\_list, c) == 0) \{}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em List$\ast$} & l, list to check. \\
+\hline
+{\em char} & c, character to verify. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+0 if the character is not in the list, 1 otherwise. 
+\end{DoxyReturn}
