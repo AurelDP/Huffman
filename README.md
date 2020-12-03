@@ -12,3 +12,6 @@ Le but du projet Huffman est de réaliser un compresseur de fichier texte se bas
 
 ## Contexte
 Ce projet s'inscrit dans un apprentissage continu du langage C et constitue un projet de groupe noté dans le cadre d'études.
+
+## Documentation
+Une documentation a été ajoutée au projet Huffman. Intégrée dans les ".h", elle est également visibile dans le dossier "Doxygen". En cas de problèmes, il est conseillé de la regénerer depuis le logiciel "Doxywizard".
