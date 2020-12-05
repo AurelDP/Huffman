@@ -6,25 +6,27 @@
 
 
 void find_path(Node* tree, char* path, int count) {
-    if (tree->right == NULL && tree->left == NULL) {
-        if (count == 0) {
-            path[count] = '0';
-            path[count + 1] = '\0';
+    if (tree != NULL) {
+        if (tree->right == NULL && tree->left == NULL) {
+            if (count == 0) {
+                path[count] = '0';
+                path[count + 1] = '\0';
+            }
+            else
+                path[count] = '\0';
+            FILE* file = fopen("Files/dico.txt", "a");
+            fprintf(file, "%c:", tree->info->chara);
+            fprintf(file, "%s\n", path);
+            fclose(file);
         }
-        else
-            path[count] = '\0';
-        FILE* file = fopen("Files/dico.txt", "a");
-        fprintf(file, "%c:", tree->info->chara);
-        fprintf(file, "%s\n", path);
-        fclose(file);
-    }
-    if (tree->right) {
-        path[count] = '1';
-        find_path(tree->right, path, count + 1);
-    }
-    if (tree->left) {
-        path[count] = '0';
-        find_path(tree->left, path, count + 1);
+        if (tree->right) {
+            path[count] = '1';
+            find_path(tree->right, path, count + 1);
+        }
+        if (tree->left) {
+            path[count] = '0';
+            find_path(tree->left, path, count + 1);
+        }
     }
 }
 
