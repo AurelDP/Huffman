@@ -1,5 +1,5 @@
-\hypertarget{_binary_translation_8h}{}\doxysection{C\+:/\+Users/cliele/\+Documents/\+Git\+Hub/\+Huffman/src/\+Binary\+Translation/\+Binary\+Translation.h File Reference}
-\label{_binary_translation_8h}\index{C:/Users/cliele/Documents/GitHub/Huffman/src/BinaryTranslation/BinaryTranslation.h@{C:/Users/cliele/Documents/GitHub/Huffman/src/BinaryTranslation/BinaryTranslation.h}}
+\hypertarget{_binary_translation_8h}{}\doxysection{src/\+Binary\+Translation/\+Binary\+Translation.h File Reference}
+\label{_binary_translation_8h}\index{src/BinaryTranslation/BinaryTranslation.h@{src/BinaryTranslation/BinaryTranslation.h}}
 
 
 Header file regrouping the functions for transforming text files into binary files.  
@@ -8,7 +8,7 @@ Header file regrouping the functions for transforming text files into binary fil
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{_binary_translation_8h_aae857dc1ea0e1ae7079c78304da1a676}{text2binary}} ()
+int \mbox{\hyperlink{_binary_translation_8h_add1ee5b39086f00f3f61889f5c6339ed}{text2binary}} ()
 \begin{DoxyCompactList}\small\item\em Converts a text file into a binary file. \end{DoxyCompactList}\item 
 char $\ast$ \mbox{\hyperlink{_binary_translation_8h_a0edecd5f54f3f71f46ffd686d93381c1}{char2binary}} (char c)
 \begin{DoxyCompactList}\small\item\em Converts a text file into a binary file. Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
@@ -48,11 +48,11 @@ Converts a text file into a binary file. Example \+:
 \begin{DoxyReturn}{Returns}
 A string of characters containing the binary code of the character given in parameter. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_binary_translation_8h_aae857dc1ea0e1ae7079c78304da1a676}\label{_binary_translation_8h_aae857dc1ea0e1ae7079c78304da1a676}} 
+\mbox{\Hypertarget{_binary_translation_8h_add1ee5b39086f00f3f61889f5c6339ed}\label{_binary_translation_8h_add1ee5b39086f00f3f61889f5c6339ed}} 
 \index{BinaryTranslation.h@{BinaryTranslation.h}!text2binary@{text2binary}}
 \index{text2binary@{text2binary}!BinaryTranslation.h@{BinaryTranslation.h}}
 \doxysubsubsection{\texorpdfstring{text2binary()}{text2binary()}}
-{\footnotesize\ttfamily void text2binary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int text2binary (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
@@ -64,5 +64,5 @@ Converts a text file into a binary file.
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Nothing. 
+1 if file could be open, 0 if not. 
 \end{DoxyReturn}
