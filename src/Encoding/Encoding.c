@@ -50,7 +50,7 @@ void encod() {
         rewind(dico);
     }
 
-    free(charLine);
+    //free(charLine);
 
     fclose(output);
     fclose(input);
