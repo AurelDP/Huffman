@@ -116,8 +116,11 @@ Node* create_huffman_tree(ListTree** list) {
 			Node* new_node = create_double_node(list);
 			insert_node(list, new_node);
 		}
+		tree = (*list)->node;
 	}
-	tree = (*list)->node;
+	else {
+		tree = NULL;
+	}
 	return tree;
 }
 
