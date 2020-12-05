@@ -12,9 +12,9 @@
 /**
  * \brief Converts a text file into a binary file.
  * \param Nothing.
- * \return Nothing.
+ * \return 1 if file could be open, 0 if not.
  */
-void text2binary();
+int text2binary();
 
 /**
  * \brief Converts a text file into a binary file. Example :
