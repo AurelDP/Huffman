@@ -1,12 +1,12 @@
-#define _CRT_SECURE_NO_DEPRECATE                    // Bloque le rapport d'erreur de Visual Studio concernant la fonction "fopen"
 #include <stdlib.h>
 #include <stdio.h>
 #include "Occurences.h"
 
+
 List* occurence() {
     
     FILE* file = fopen("Files/input.txt", "r");
-    char c;
+    char c = 0;
 
     List* begin_list = NULL;
     List* temp = NULL;
@@ -39,9 +39,9 @@ List* occurence() {
 
 List* create_new_link(char c) {
     List* link = malloc(sizeof(List));
-    Data* data= malloc(sizeof(Data));
+    Data* data = malloc(sizeof(Data));
     data->chara = c;
-    data->occurence= 1;
+    data->occurence = 1;
     link->data = data;
     link->next = NULL;
     return link;

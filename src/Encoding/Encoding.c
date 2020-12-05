@@ -11,29 +11,33 @@ void encod() {
 
     char charInput;
     char charDico;
-    char charLine;
     int stop = 0;
 
-    while ((charInput = fgetc(input)) != EOF)
-    {
+    // We recover each character of the text file
+    while ((charInput = fgetc(input)) != EOF) {
+
         stop = 0;
 
-        while ((charDico = fgetc(dico)) != EOF && stop == 0)
-        {
-            if ((charDico == charInput))
-            {
+        // We check that we are not at the end of the dictionary and we recover the first character of the line
+        while ((charDico = fgetc(dico)) != EOF && stop == 0) {
+            
+            // If the character is the one we are looking for
+            if (charDico == charInput) {
+                // Shift the cursor by 1 (pass the ":")
                 fseek(dico, 1, SEEK_CUR);
-                while ((charLine = fgetc(dico)) != '\n')
-                {
-                    fputc(charLine, output); // On peut mettre les '010..' dans une chaine et seulement le push dans le fichier à la fin (ça optimisera un peu surement)
+                // As long as we are not at the end of the line, we write in the output file
+                while ((charDico = fgetc(dico)) != '\n') {
+                    fputc(charDico, output);
                 }
+                // Then we can break the loop
                 stop = 1;
             }
-            else
-            {
-                while ((charLine = fgetc(dico)) != '\n')
-                {
-                    fseek(dico, 1, SEEK_CUR);
+
+            // If the character is not the one we want
+            else {
+                // We go to the next line and start again
+                while (charDico != '\n'){
+                    charDico = fgetc(dico);
                 }
             }
         }

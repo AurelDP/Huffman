@@ -1,28 +1,32 @@
-#define _CRT_SECURE_NO_DEPRECATE                    // Bloque le rapport d'erreur de Visual Studio concernant la fonction "fopen"
 #include <stdlib.h>
 #include <stdio.h>
 #include "BinaryTranslation.h"
 
-void text2binary() {
+int text2binary() {
     FILE* file_txt = NULL;
     file_txt = fopen("Files/input.txt", "r");
     FILE* file_bin = NULL;
     file_bin = fopen("Files/binary.txt", "wb");
 
-    char c;
+    char c = 0;
 
     if (file_txt != NULL) {
         do {
             c = fgetc(file_txt);
             if (c != EOF) {
-                fprintf(file_bin, char2binary(c));  // Façon d'opitimiser : utiliser un dico et, si caractère déjà converti, ne pas appeler char2binary et mettre le code binaire directement
+                fprintf(file_bin, char2binary(c));
             }
         } while (c != EOF);
         rewind(file_txt);
+        fclose(file_txt);
+        fclose(file_bin);
+        return 1;
+    }
+    else {
+        printf("\nError: Input file could not be opened!\n");
+        return 0;
     }
 
-    fclose(file_txt);
-    fclose(file_bin);
 }
 
 char* char2binary(char c) {

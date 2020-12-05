@@ -42,9 +42,6 @@
     <ClInclude Include="src\TreeDictionary\Dictionary.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="src\TreeDictionary\.gitkeep" />
-  </ItemGroup>
-  <ItemGroup>
     <Text Include="Files\output.txt" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
