@@ -39,9 +39,9 @@ List* occurence() {
 
 List* create_new_link(char c) {
     List* link = malloc(sizeof(List));
-    Data* data= malloc(sizeof(Data));
+    Data* data = malloc(sizeof(Data));
     data->chara = c;
-    data->occurence= 1;
+    data->occurence = 1;
     link->data = data;
     link->next = NULL;
     return link;
