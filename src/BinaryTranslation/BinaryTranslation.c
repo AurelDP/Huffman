@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include "BinaryTranslation.h"
 
-void text2binary() {
+int text2binary() {
     FILE* file_txt = NULL;
     file_txt = fopen("Files/input.txt", "r");
     FILE* file_bin = NULL;
@@ -19,10 +19,15 @@ void text2binary() {
             }
         } while (c != EOF);
         rewind(file_txt);
+        fclose(file_txt);
+        fclose(file_bin);
+        return 1;
+    }
+    else {
+        printf("\nError: Input file could not be opened!\n");
+        return 0;
     }
 
-    fclose(file_txt);
-    fclose(file_bin);
 }
 
 char* char2binary(char c) {
