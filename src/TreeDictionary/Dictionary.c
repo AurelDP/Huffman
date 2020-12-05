@@ -34,10 +34,20 @@ int find_path(Node* tree, char c, char** path) {
 void create_dictio(Node* tree, List* l) {
     FILE* file;
     char* path = (char*)malloc(1);
+    int stop = 0;
 
     file = fopen("Files/dico.txt", "w");
 
-    while (l != NULL) {
+    if (l != NULL && l->next == NULL) {
+        path = (char*)realloc(path, 2);
+        path[0] = '0';
+        path[1] = '\0';
+        fprintf(file, "%c:", l->data->chara);
+        fprintf(file, "%s\n", path);
+        stop = 1;
+    }
+
+    while (l != NULL && stop == 0) {
         path[0] = '\0';
         find_path(tree, l->data->chara, &path);
         strrev(path);
