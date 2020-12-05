@@ -5,57 +5,48 @@
 #include "Dictionary.h"
 
 
-int find_path(Node* tree, char c, char** path) {
+void find_path(Node* tree, char* path, int count) {
+    if (tree->right == NULL && tree->left == NULL) {
+        if (count == 0)
+            path[count] = '0';
+        else
+            path[count] = '\0';
+        FILE* file = fopen("Files/dico.txt", "a");
+        fprintf(file, "%c:", tree->info->chara);
+        fprintf(file, "%s\n", path);
+        fclose(file);
+    }
+    if (tree->right) {
+        path[count] = '1';
+        find_path(tree->right, path, count + 1);
+    }
+    if (tree->left) {
+        path[count] = '0';
+        find_path(tree->left, path, count + 1);
+    }
+}
+
+void create_dictio(Node* tree) {
+    FILE* file = fopen("Files/dico.txt", "w");
+    fclose(file);
+
+    char* path = (char*)malloc(depth_tree(tree));
+
+    find_path(tree, path, 0);
+
+    free(path);
+}
+
+int depth_tree(Node* tree) {
     if (tree == NULL) {
         return 0;
     }
     else {
-        if (tree->info->chara == c) {
-            *path = (char*)realloc(*path, 1);
-            *path[0] = '\0';
-            return 1;
-        }
-        else if (find_path(tree->right, c, path)) {
-            *path = (char*)realloc(*path, strlen(*path) + 2);
-            strcat(*path, "1");
-            return 1;
-        }
-        else if (find_path(tree->left, c, path)) {
-            *path = (char*)realloc(*path, strlen(*path) + 2);
-            strcat(*path, "0");
-            return 1;
-        }
-        else {
-            return 0;
-        }
+        int left = depth_tree(tree->left);
+        int right = depth_tree(tree->right);
+        if (left > right)
+            return 1 + depth_tree(tree->left);
+        else
+            return 1 + depth_tree(tree->right);
     }
-}
-
-void create_dictio(Node* tree, List* l) {
-    FILE* file;
-    char* path = (char*)malloc(1);
-    int stop = 0;
-
-    file = fopen("Files/dico.txt", "w");
-
-    if (l != NULL && l->next == NULL) {
-        path = (char*)realloc(path, 2);
-        path[0] = '0';
-        path[1] = '\0';
-        fprintf(file, "%c:", l->data->chara);
-        fprintf(file, "%s\n", path);
-        stop = 1;
-    }
-
-    while (l != NULL && stop == 0) {
-        path[0] = '\0';
-        find_path(tree, l->data->chara, &path);
-        strrev(path);
-        fprintf(file, "%c:", l->data->chara);
-        fprintf(file, "%s\n", path);
-        l = l->next;
-    }
-
-    free(path);
-    fclose(file);
 }
