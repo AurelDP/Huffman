@@ -7,8 +7,10 @@
 
 void find_path(Node* tree, char* path, int count) {
     if (tree->right == NULL && tree->left == NULL) {
-        if (count == 0)
+        if (count == 0) {
             path[count] = '0';
+            path[count + 1] = '\0';
+        }
         else
             path[count] = '\0';
         FILE* file = fopen("Files/dico.txt", "a");
@@ -29,8 +31,13 @@ void find_path(Node* tree, char* path, int count) {
 void create_dictio(Node* tree) {
     FILE* file = fopen("Files/dico.txt", "w");
     fclose(file);
+    char* path = NULL;
+    int depth = depth_tree(tree);
 
-    char* path = (char*)malloc(depth_tree(tree));
+    if(depth <= 1)
+        path = (char*)malloc(2);    // If the character is at the root, two characters are still needed to encode it
+    else
+        path = (char*)malloc(depth);
 
     find_path(tree, path, 0);
 
