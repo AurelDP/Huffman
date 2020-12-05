@@ -1,17 +1,31 @@
 # Huffman
-Le but du projet Huffman est de réaliser un compresseur de fichier texte se basant sur la réecriture des caractères en binaire.
+The goal of the Huffman project is to realize a text file compressor based on the rewriting of characters in binary.
 
-## Décomposition de l'algorithme
-
-| Nom | Description |
+## Algorithm decomposition
+| Name | Description |
 | --- | ----------- |
-| Occurrences | Lister et compter les caractères présents dans le fichier texte |
-| Arbre et dictionnaire | Positionner ces caractères dans un arbre et en sortir un dictionnaire binaire associant un nombre binaire à chaque caractère |
-| Encodage | Ecriture du nouveau fichier binaire en s'aidant du dictionnaire déjà crée |
-| Décodage | Récupération du dictionnaire et reconstruction du fichier texte à partir du fichier binaire (**Non réalisé**) |
+| Occurrences | List and count the characters present in the text file |
+| Tree and dictionary | Place these characters in a tree and output a binary dictionary associating a binary number to each character |
+| Encoding | Write the new binary file using the dictionary already created |
+| Decoding | Recovery of the dictionary and reconstruction of the text file from the binary file (**Not done**) |
 
-## Contexte
-Ce projet s'inscrit dans un apprentissage continu du langage C et constitue un projet de groupe noté dans le cadre d'études.
+### Context
+This project is part of a continuous learning of the C language and is a group project graded in the framework of studies.
 
-## Documentation
-Une documentation a été ajoutée au projet Huffman. Intégrée dans les ".h", elle est également visible dans le dossier "Doxygen". En cas de problèmes, il est conseillé de la regénerer depuis le logiciel "Doxywizard".
+### Documentation
+Documentation has been added to the Huffman project. Integrated in the `.h`, it is also visible in the `Doxygen` folder. In case of problems, it is advised to regenerate it from the `Doxywizard` software.
+
+### Contributors
+[Duval Aurélien](https://github.com/AurelDP) | [Paucton Rémi](https://github.com/Remi-paucton) | [Pépin Antoine](https://github.com/AntoinePEPIN) | [Pouget Lucien](https://github.com/Lucienpg) | [Rabiller Jean-Baptiste](https://github.com/JBRabiller)
+
+# How to use?
+
+Clone the repository on your computer.
+
+### If you use Microsoft Visual Studio
+
+Just run `Huffman.sln`.
+
+### Otherwise
+
+Copy [Huffman.exe](/x64/Debug) (`x64/Debug`) to the project root and run it.
