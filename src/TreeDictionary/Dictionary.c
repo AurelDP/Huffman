@@ -20,11 +20,11 @@ void find_path(Node* tree, char* path, int count) {
             fclose(file);
         }
         if (tree->right) {
-            path[count] = '1';
+            path[count] = '0';
             find_path(tree->right, path, count + 1);
         }
         if (tree->left) {
-            path[count] = '0';
+            path[count] = '1';
             find_path(tree->left, path, count + 1);
         }
     }

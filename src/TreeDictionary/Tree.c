@@ -4,7 +4,7 @@
 
 
 //-------------------------------------------------------------
-// FONCTIONS DE TRANSFORMATION LISTE -> LISTE DE NOEUDS
+// TRANSFORMATION FUNCTIONS LIST -> NODE LIST
 //-------------------------------------------------------------
 
 
@@ -41,7 +41,7 @@ ListTree* transform_list(List* list) {
 
 
 //-------------------------------------------------------------
-// FONCTIONS DE TRANSFORMATION DE LA LISTE ET CREATION ARBRE
+// LIST TRANSFORMATION AND TREE CREATION FUNCTIONS
 //-------------------------------------------------------------
 
 
@@ -126,7 +126,7 @@ Node* create_huffman_tree(ListTree** list) {
 
 
 //-------------------------------------------------------------
-// FONCTIONS FREE
+// FREE FUNCTIONS
 //-------------------------------------------------------------
 
 
