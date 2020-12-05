@@ -5,10 +5,14 @@
 #include "Dictionary.h"
 
 
-int find_path(Node* tree, char c, char** path) {
-    return 0;
+void find_path(Node* tree, char* path, int count) {
+    
 }
 
-void create_dictio(Node* tree, List* l) {
+void create_dictio(Node* tree) {
     
+}
+
+int depth_tree(Node* tree) {
+    return 0;
 }
