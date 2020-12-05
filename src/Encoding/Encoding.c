@@ -32,7 +32,7 @@ void encod() {
                 while ((charTemp = fgetc(dico)) != '\n')
                 {
                     charLine = (char*)realloc(charLine, i + 2);
-                    strcat(charLine, &charTemp);
+                    charLine[i] = charTemp;
                     charLine[i + 1] = '\0';
                     i++;
                 }
@@ -50,7 +50,7 @@ void encod() {
         rewind(dico);
     }
 
-    //free(charLine);
+    free(charLine);
 
     fclose(output);
     fclose(input);
