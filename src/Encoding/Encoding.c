@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <stdio.h>
+#include <string.h>
 #include "Encoding.h"
 
 
@@ -11,8 +12,10 @@ void encod() {
 
     char charInput;
     char charDico;
-    char charLine;
+    char charTemp;
+    char* charLine = (char*)malloc(sizeof(char));
     int stop = 0;
+    int i = 0;
 
     while ((charInput = fgetc(input)) != EOF)
     {
@@ -22,16 +25,23 @@ void encod() {
         {
             if ((charDico == charInput))
             {
+                charLine = (char*)realloc(charLine, 1);
+                charLine[0] = '\0';
+                i = 0;
                 fseek(dico, 1, SEEK_CUR);
-                while ((charLine = fgetc(dico)) != '\n')
+                while ((charTemp = fgetc(dico)) != '\n')
                 {
-                    fputc(charLine, output); // On peut mettre les '010..' dans une chaine et seulement le push dans le fichier à la fin (ça optimisera un peu surement)
+                    charLine = (char*)realloc(charLine, i + 2);
+                    strcat(charLine, &charTemp);
+                    charLine[i + 1] = '\0';
+                    i++;
                 }
+                fprintf(output, "%s", charLine);
                 stop = 1;
             }
             else
             {
-                while ((charLine = fgetc(dico)) != '\n')
+                while ((charTemp = fgetc(dico)) != '\n')
                 {
                     fseek(dico, 1, SEEK_CUR);
                 }
@@ -39,6 +49,8 @@ void encod() {
         }
         rewind(dico);
     }
+
+    free(charLine);
 
     fclose(output);
     fclose(input);
