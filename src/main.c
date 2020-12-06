@@ -37,7 +37,7 @@ int main(){
                 printf("Creation of the Huffman tree...\n");
                 Node* huffman_tree = create_huffman_tree(&list_tree);
                 printf("Creation of the dictionary...\n");
-                create_dictio(huffman_tree, list);
+                create_dictio(huffman_tree);
                 printf("Encoding...\n");
                 encod();
                 free_list(list);
