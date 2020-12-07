@@ -46,4 +46,15 @@ typedef struct Node {
 	struct Node* left;
 }Node;
 
+typedef struct DataBST {
+	char chara;
+	char* code;
+}DataBST;
+
+typedef struct NodeBST {
+	struct DataBST* info;
+	struct NodeBST* right;
+	struct NodeBST* left;
+}NodeBST;
+
 #endif
