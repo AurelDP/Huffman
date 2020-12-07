@@ -12,32 +12,6 @@
 
 
 //-------------------------------------------------------------
-// TRANSFORMATION FUNCTIONS LIST -> NODE LIST
-//-------------------------------------------------------------
-
-/**
- * \brief Node creation function.
- * \param Data* info, the information to be contained in the new node.
- * \return Node*, the new node created.
- */
-Node* create_node(Data* info);
-
-/**
- * \brief Function to create an element containing a node and a pointer to the following element.
- * \param Data* info, the information to be contained in the node of the new element.
- * \return ListTree*, the new element created.
- */
-ListTree* create_list_tree(Data* info);
-
-/**
- * \brief Function to transform a list of data into a list of nodes.
- * \param List* list, the list to be transformed.
- * \return ListTree*, the new list.
- */
-ListTree* transform_list(List* list);
-
-
-//-------------------------------------------------------------
 // LIST TRANSFORMATION AND TREE CREATION FUNCTIONS
 //-------------------------------------------------------------
 
@@ -101,13 +75,6 @@ Node* create_huffman_tree(ListTree** list);
 // FREE FUNCTIONS
 //-------------------------------------------------------------
 
-
-/**
- * \brief Simple function for free a list.
- * \param List* l, the list.
- * \return Nothing.
- */
-void free_list(List* l);
 
 /**
  * \brief Simple function for free a node.
