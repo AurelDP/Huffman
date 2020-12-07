@@ -18,7 +18,7 @@
  * \param Nothing.
  * \return A list of data.
  */
-List* occurence();
+ListTree* occurence();
 
 /**
  * \brief Creates an element of a list from a character and returns it. Example :
@@ -28,17 +28,17 @@ List* occurence();
  * \param char c, character to put in the new element.
  * \return The new element containing the character and an occurrence of 1.
  */
-List* create_new_link(char c);
+ListTree* create_new_link(char c);
 
 /**
  * \brief Checks if the character is already in the list. Example :
  * \code{.c}
  * if (verif_list(begin_list, c) == 0) {
  * \endcode
- * \param List* l, list to check.
+ * \param ListTree* l, list to check.
  * \param char c, character to verify.
  * \return 0 if the character is not in the list, 1 otherwise.
  */
-int verif_list(List* l, char c);
+int verif_list(ListTree* l, char c);
 
 #endif
