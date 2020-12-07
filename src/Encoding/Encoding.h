@@ -18,6 +18,6 @@
  * \param Nothing.
  * \return Nothing.
  */
-void encod();
+void encod(NodeBST* BSTtree);
 
 #endif
