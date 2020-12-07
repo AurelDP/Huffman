@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['verif_5flist_57',['verif_list',['../_occurences_8h.html#a9559dd37b63bcff706c405ff914bfa30',1,'Occurences.c']]]
+  ['text2binary_58',['text2binary',['../_binary_translation_8h.html#add1ee5b39086f00f3f61889f5c6339ed',1,'BinaryTranslation.c']]]
 ];

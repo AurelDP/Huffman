@@ -9,11 +9,11 @@ Header file grouping together the functions for classifying the characters of a 
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{struct_list}{List}} $\ast$ \mbox{\hyperlink{_occurences_8h_a277033ed6f3ec689cf8e31d7fa266b65}{occurence}} ()
-\begin{DoxyCompactList}\small\item\em Function to create a list of data from a text file. Example \+: \end{DoxyCompactList}\item 
-\mbox{\hyperlink{struct_list}{List}} $\ast$ \mbox{\hyperlink{_occurences_8h_ab046083bfed9476b1c721d11c8502953}{create\+\_\+new\+\_\+link}} (char c)
-\begin{DoxyCompactList}\small\item\em Creates an element of a list from a character and returns it. Example \+: \end{DoxyCompactList}\item 
-int \mbox{\hyperlink{_occurences_8h_a9559dd37b63bcff706c405ff914bfa30}{verif\+\_\+list}} (\mbox{\hyperlink{struct_list}{List}} $\ast$l, char c)
+\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$ \mbox{\hyperlink{_occurences_8h_aafe9fc5d5c3f997317762b63f42c402b}{occurence}} ()
+\begin{DoxyCompactList}\small\item\em Function to create a list of nodes with data from a text file. Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$ \mbox{\hyperlink{_occurences_8h_a48ceaaf45b025e94ff6ca214e4e10634}{create\+\_\+new\+\_\+link}} (char c)
+\begin{DoxyCompactList}\small\item\em Creates an element of a list of nodes from a character and returns it. Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_occurences_8h_ad8d76dfce4968fa59087b002b1e28a4a}{verif\+\_\+list}} (\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$l, char c)
 \begin{DoxyCompactList}\small\item\em Checks if the character is already in the list. Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -29,19 +29,19 @@ December 2020
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_occurences_8h_ab046083bfed9476b1c721d11c8502953}\label{_occurences_8h_ab046083bfed9476b1c721d11c8502953}} 
+\mbox{\Hypertarget{_occurences_8h_a48ceaaf45b025e94ff6ca214e4e10634}\label{_occurences_8h_a48ceaaf45b025e94ff6ca214e4e10634}} 
 \index{Occurences.h@{Occurences.h}!create\_new\_link@{create\_new\_link}}
 \index{create\_new\_link@{create\_new\_link}!Occurences.h@{Occurences.h}}
 \doxysubsubsection{\texorpdfstring{create\_new\_link()}{create\_new\_link()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_list}{List}}$\ast$ create\+\_\+new\+\_\+link (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_list_tree}{List\+Tree}}$\ast$ create\+\_\+new\+\_\+link (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
 
 
 
-Creates an element of a list from a character and returns it. Example \+: 
+Creates an element of a list of nodes from a character and returns it. Example \+: 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{temp-\/>next = \mbox{\hyperlink{_occurences_8h_ab046083bfed9476b1c721d11c8502953}{create\_new\_link}}(c);}
+\DoxyCodeLine{temp-\/>next = \mbox{\hyperlink{_occurences_8h_a48ceaaf45b025e94ff6ca214e4e10634}{create\_new\_link}}(c);}
 \end{DoxyCode}
  
 \begin{DoxyParams}{Parameters}
@@ -51,19 +51,19 @@ Creates an element of a list from a character and returns it. Example \+:
 \begin{DoxyReturn}{Returns}
 The new element containing the character and an occurrence of 1. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_occurences_8h_a277033ed6f3ec689cf8e31d7fa266b65}\label{_occurences_8h_a277033ed6f3ec689cf8e31d7fa266b65}} 
+\mbox{\Hypertarget{_occurences_8h_aafe9fc5d5c3f997317762b63f42c402b}\label{_occurences_8h_aafe9fc5d5c3f997317762b63f42c402b}} 
 \index{Occurences.h@{Occurences.h}!occurence@{occurence}}
 \index{occurence@{occurence}!Occurences.h@{Occurences.h}}
 \doxysubsubsection{\texorpdfstring{occurence()}{occurence()}}
-{\footnotesize\ttfamily \mbox{\hyperlink{struct_list}{List}}$\ast$ occurence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_list_tree}{List\+Tree}}$\ast$ occurence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Function to create a list of data from a text file. Example \+: 
+Function to create a list of nodes with data from a text file. Example \+: 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{struct_list}{List}}* list = \mbox{\hyperlink{_occurences_8h_a277033ed6f3ec689cf8e31d7fa266b65}{occurence}}();}
+\DoxyCodeLine{\mbox{\hyperlink{struct_list_tree}{ListTree}}* list = \mbox{\hyperlink{_occurences_8h_aafe9fc5d5c3f997317762b63f42c402b}{occurence}}();}
 \end{DoxyCode}
  
 \begin{DoxyParams}{Parameters}
@@ -71,13 +71,13 @@ Function to create a list of data from a text file. Example \+:
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A list of data. 
+A list of nodes. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_occurences_8h_a9559dd37b63bcff706c405ff914bfa30}\label{_occurences_8h_a9559dd37b63bcff706c405ff914bfa30}} 
+\mbox{\Hypertarget{_occurences_8h_ad8d76dfce4968fa59087b002b1e28a4a}\label{_occurences_8h_ad8d76dfce4968fa59087b002b1e28a4a}} 
 \index{Occurences.h@{Occurences.h}!verif\_list@{verif\_list}}
 \index{verif\_list@{verif\_list}!Occurences.h@{Occurences.h}}
 \doxysubsubsection{\texorpdfstring{verif\_list()}{verif\_list()}}
-{\footnotesize\ttfamily int verif\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{l,  }\item[{char}]{c }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily int verif\+\_\+list (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_list_tree}{List\+Tree}} $\ast$}]{l,  }\item[{char}]{c }\end{DoxyParamCaption})}
 
 
 
@@ -85,11 +85,11 @@ Checks if the character is already in the list. Example \+:
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{_occurences_8h_a9559dd37b63bcff706c405ff914bfa30}{verif\_list}}(begin\_list, c) == 0) \{}
+\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{_occurences_8h_ad8d76dfce4968fa59087b002b1e28a4a}{verif\_list}}(begin\_list, c) == 0) \{}
 \end{DoxyCode}
  
 \begin{DoxyParams}{Parameters}
-{\em List$\ast$} & l, list to check. \\
+{\em List\+Tree$\ast$} & l, list to check. \\
 \hline
 {\em char} & c, character to verify. \\
 \hline

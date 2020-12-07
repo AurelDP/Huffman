@@ -81,68 +81,41 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a63b7963c9a1e8b5ee625b8f2ac7ef0f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_dictionary_8h.html#a63b7963c9a1e8b5ee625b8f2ac7ef0f4">find_path</a> (<a class="el" href="struct_node.html">Node</a> *tree, char c, char **path)</td></tr>
-<tr class="memdesc:a63b7963c9a1e8b5ee625b8f2ac7ef0f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that returns a string of characters consisting of 0 or 1 depending on the path taken to arrive at a given character. Example :  <a href="_dictionary_8h.html#a63b7963c9a1e8b5ee625b8f2ac7ef0f4">More...</a><br /></td></tr>
-<tr class="separator:a63b7963c9a1e8b5ee625b8f2ac7ef0f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2061c341341751829db6d3c992e81f24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_dictionary_8h.html#a2061c341341751829db6d3c992e81f24">create_dictio</a> (<a class="el" href="struct_node.html">Node</a> *tree, <a class="el" href="struct_list.html">List</a> *l)</td></tr>
-<tr class="memdesc:a2061c341341751829db6d3c992e81f24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dictionary creation function. Example :  <a href="_dictionary_8h.html#a2061c341341751829db6d3c992e81f24">More...</a><br /></td></tr>
-<tr class="separator:a2061c341341751829db6d3c992e81f24"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e596a36e204ce46f67f25e69cc1032"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_dictionary_8h.html#af6e596a36e204ce46f67f25e69cc1032">find_path</a> (<a class="el" href="struct_node.html">Node</a> *tree, char *path, int count, <a class="el" href="struct_node_b_s_t.html">NodeBST</a> **BSTtree, int depth)</td></tr>
+<tr class="memdesc:af6e596a36e204ce46f67f25e69cc1032"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function that writes a binary string to a dictionary and a binary search tree from a character tree. Example :  <a href="_dictionary_8h.html#af6e596a36e204ce46f67f25e69cc1032">More...</a><br /></td></tr>
+<tr class="separator:af6e596a36e204ce46f67f25e69cc1032"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9688a949b65f2154e14b498fb8ad6bc9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node_b_s_t.html">NodeBST</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_dictionary_8h.html#a9688a949b65f2154e14b498fb8ad6bc9">create_dictio</a> (<a class="el" href="struct_node.html">Node</a> *tree)</td></tr>
+<tr class="memdesc:a9688a949b65f2154e14b498fb8ad6bc9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dictionary and BST creation function. Example :  <a href="_dictionary_8h.html#a9688a949b65f2154e14b498fb8ad6bc9">More...</a><br /></td></tr>
+<tr class="separator:a9688a949b65f2154e14b498fb8ad6bc9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa503872bdd6db6c5f160844b54d06e30"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_dictionary_8h.html#aa503872bdd6db6c5f160844b54d06e30">depth_tree</a> (<a class="el" href="struct_node.html">Node</a> *tree)</td></tr>
+<tr class="memdesc:aa503872bdd6db6c5f160844b54d06e30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculation of the maximum depth of a tree. Example :  <a href="_dictionary_8h.html#aa503872bdd6db6c5f160844b54d06e30">More...</a><br /></td></tr>
+<tr class="separator:aa503872bdd6db6c5f160844b54d06e30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a722d7c2d54d251d86f1c2246202bfaf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_dictionary_8h.html#a722d7c2d54d251d86f1c2246202bfaf0">insert_ABR_node</a> (<a class="el" href="struct_node_b_s_t.html">NodeBST</a> **BSTtree, char *path, char c, int depth)</td></tr>
+<tr class="memdesc:a722d7c2d54d251d86f1c2246202bfaf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inserting a node in a BST. Example :  <a href="_dictionary_8h.html#a722d7c2d54d251d86f1c2246202bfaf0">More...</a><br /></td></tr>
+<tr class="separator:a722d7c2d54d251d86f1c2246202bfaf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8381ea0b50078805a0fa8aac4d43b0c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_node_b_s_t.html">NodeBST</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_dictionary_8h.html#aa8381ea0b50078805a0fa8aac4d43b0c">create_ABR_node</a> (char *path, char c, int depth)</td></tr>
+<tr class="memdesc:aa8381ea0b50078805a0fa8aac4d43b0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creating a new node. Example :  <a href="_dictionary_8h.html#aa8381ea0b50078805a0fa8aac4d43b0c">More...</a><br /></td></tr>
+<tr class="separator:aa8381ea0b50078805a0fa8aac4d43b0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a140fcfb61ec6b60b7a8880f7400d9b05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_dictionary_8h.html#a140fcfb61ec6b60b7a8880f7400d9b05">free_node_ABR</a> (<a class="el" href="struct_node_b_s_t.html">NodeBST</a> *node)</td></tr>
+<tr class="memdesc:a140fcfb61ec6b60b7a8880f7400d9b05"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple memory free function.  <a href="_dictionary_8h.html#a140fcfb61ec6b60b7a8880f7400d9b05">More...</a><br /></td></tr>
+<tr class="separator:a140fcfb61ec6b60b7a8880f7400d9b05"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file containing the dictionary generation functions. </p>
 <dl class="section author"><dt>Author</dt><dd>Aurelien DUVAL <a href="#" onclick="location.href='mai'+'lto:'+'aur'+'el'+'ien'+'.d'+'uva'+'l.'+'19@'+'ef'+'rei'+'.n'+'et'; return false;">aurel<span style="display: none;">.nosp@m.</span>ien.<span style="display: none;">.nosp@m.</span>duval<span style="display: none;">.nosp@m.</span>.19@<span style="display: none;">.nosp@m.</span>efrei<span style="display: none;">.nosp@m.</span>.net</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>December 2020 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a2061c341341751829db6d3c992e81f24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2061c341341751829db6d3c992e81f24">&#9670;&nbsp;</a></span>create_dictio()</h2>
+<a id="aa8381ea0b50078805a0fa8aac4d43b0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8381ea0b50078805a0fa8aac4d43b0c">&#9670;&nbsp;</a></span>create_ABR_node()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void create_dictio </td>
+          <td class="memname"><a class="el" href="struct_node_b_s_t.html">NodeBST</a>* create_ABR_node </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *&#160;</td>
-          <td class="paramname"><em>tree</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="struct_list.html">List</a> *&#160;</td>
-          <td class="paramname"><em>l</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Dictionary creation function. Example : </p>
-<div class="fragment"><div class="line"><a class="code" href="_dictionary_8h.html#a2061c341341751829db6d3c992e81f24">create_dictio</a>(huffman_tree, list)</div>
-</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">Node*</td><td>tree, Huffman tree. </td></tr>
-    <tr><td class="paramname">List*</td><td>l, list of characters in the text file. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
-
-</div>
-</div>
-<a id="a63b7963c9a1e8b5ee625b8f2ac7ef0f4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63b7963c9a1e8b5ee625b8f2ac7ef0f4">&#9670;&nbsp;</a></span>find_path()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">int find_path </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *&#160;</td>
-          <td class="paramname"><em>tree</em>, </td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -153,8 +126,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">char **&#160;</td>
-          <td class="paramname"><em>path</em>&#160;</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depth</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -164,23 +137,221 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Function that returns a string of characters consisting of 0 or 1 depending on the path taken to arrive at a given character. Example : </p>
-<div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="_dictionary_8h.html#a63b7963c9a1e8b5ee625b8f2ac7ef0f4">find_path</a>(tree-&gt;right, c, path)) {</div>
+<p>Creating a new node. Example : </p>
+<div class="fragment"><div class="line"><a class="code" href="struct_node_b_s_t.html">NodeBST</a>* <span class="keyword">new</span> = <a class="code" href="_dictionary_8h.html#aa8381ea0b50078805a0fa8aac4d43b0c">create_ABR_node</a>(path, c, depth);</div>
 </div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">Node*</td><td>tree, Huffman tree. </td></tr>
-    <tr><td class="paramname">char</td><td>c, character to search. </td></tr>
-    <tr><td class="paramname">char**</td><td>path, string to be modified when the character has been found. </td></tr>
+    <tr><td class="paramname">char*</td><td>path, the binary path of the new char. </td></tr>
+    <tr><td class="paramname">char</td><td>c, the new char. \parem int depth, the depth used to allocate the new binary path. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int i, 1 if the current character is the right one, 0 otherwise. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a9688a949b65f2154e14b498fb8ad6bc9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9688a949b65f2154e14b498fb8ad6bc9">&#9670;&nbsp;</a></span>create_dictio()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_node_b_s_t.html">NodeBST</a>* create_dictio </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *&#160;</td>
+          <td class="paramname"><em>tree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Dictionary and BST creation function. Example : </p>
+<div class="fragment"><div class="line"><a class="code" href="struct_node_b_s_t.html">NodeBST</a>* BSTtree = <a class="code" href="_dictionary_8h.html#a9688a949b65f2154e14b498fb8ad6bc9">create_dictio</a>(huffman_tree);</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Node*</td><td>tree, Huffman tree. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>NodeBST* BSTtree, the new binary search tree. </dd></dl>
+
+</div>
+</div>
+<a id="aa503872bdd6db6c5f160844b54d06e30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa503872bdd6db6c5f160844b54d06e30">&#9670;&nbsp;</a></span>depth_tree()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int depth_tree </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *&#160;</td>
+          <td class="paramname"><em>tree</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculation of the maximum depth of a tree. Example : </p>
+<div class="fragment"><div class="line"><span class="keywordtype">char</span>* path = (<span class="keywordtype">char</span>*)malloc(<a class="code" href="_dictionary_8h.html#aa503872bdd6db6c5f160844b54d06e30">depth_tree</a>(tree));</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Node*</td><td>tree, Huffman tree. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>int, the depth. </dd></dl>
+
+</div>
+</div>
+<a id="af6e596a36e204ce46f67f25e69cc1032"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e596a36e204ce46f67f25e69cc1032">&#9670;&nbsp;</a></span>find_path()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void find_path </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node.html">Node</a> *&#160;</td>
+          <td class="paramname"><em>tree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>count</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_node_b_s_t.html">NodeBST</a> **&#160;</td>
+          <td class="paramname"><em>BSTtree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function that writes a binary string to a dictionary and a binary search tree from a character tree. Example : </p>
+<div class="fragment"><div class="line"><a class="code" href="_dictionary_8h.html#af6e596a36e204ce46f67f25e69cc1032">find_path</a>(tree, path, 0, &amp;BSTtree, depth);</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">Node*</td><td>tree, Huffman tree. </td></tr>
+    <tr><td class="paramname">char*</td><td>path, string containing the binary code. </td></tr>
+    <tr><td class="paramname">int</td><td>count, counter corresponding to the current height of the tree. </td></tr>
+    <tr><td class="paramname">NodeBST**</td><td>BSTtree, the BST tree to modify. </td></tr>
+    <tr><td class="paramname">int</td><td>depth, the depth of the tree (used for node allocation). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a140fcfb61ec6b60b7a8880f7400d9b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a140fcfb61ec6b60b7a8880f7400d9b05">&#9670;&nbsp;</a></span>free_node_ABR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void free_node_ABR </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node_b_s_t.html">NodeBST</a> *&#160;</td>
+          <td class="paramname"><em>node</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Simple memory free function. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NodeBST*</td><td>node, the node to free. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
+
+</div>
+</div>
+<a id="a722d7c2d54d251d86f1c2246202bfaf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a722d7c2d54d251d86f1c2246202bfaf0">&#9670;&nbsp;</a></span>insert_ABR_node()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void insert_ABR_node </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_node_b_s_t.html">NodeBST</a> **&#160;</td>
+          <td class="paramname"><em>BSTtree</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char&#160;</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>depth</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Inserting a node in a BST. Example : </p>
+<div class="fragment"><div class="line"><a class="code" href="_dictionary_8h.html#a722d7c2d54d251d86f1c2246202bfaf0">insert_ABR_node</a>(BSTtree, path, tree-&gt;info-&gt;chara, depth);</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">NodeBST**</td><td>BSTtree, the BST tree. </td></tr>
+    <tr><td class="paramname">char*</td><td>path, the binary path of the new char. </td></tr>
+    <tr><td class="paramname">char</td><td>c, the new char. \parem int depth, the depth used to allocate the new binary path. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
 
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="a_dictionary_8h_html_a63b7963c9a1e8b5ee625b8f2ac7ef0f4"><div class="ttname"><a href="_dictionary_8h.html#a63b7963c9a1e8b5ee625b8f2ac7ef0f4">find_path</a></div><div class="ttdeci">int find_path(Node *tree, char c, char **path)</div><div class="ttdoc">Function that returns a string of characters consisting of 0 or 1 depending on the path taken to arri...</div><div class="ttdef"><b>Definition:</b> Dictionary.c:8</div></div>
-<div class="ttc" id="a_dictionary_8h_html_a2061c341341751829db6d3c992e81f24"><div class="ttname"><a href="_dictionary_8h.html#a2061c341341751829db6d3c992e81f24">create_dictio</a></div><div class="ttdeci">void create_dictio(Node *tree, List *l)</div><div class="ttdoc">Dictionary creation function. Example :</div><div class="ttdef"><b>Definition:</b> Dictionary.c:34</div></div>
+<div class="ttc" id="a_dictionary_8h_html_a722d7c2d54d251d86f1c2246202bfaf0"><div class="ttname"><a href="_dictionary_8h.html#a722d7c2d54d251d86f1c2246202bfaf0">insert_ABR_node</a></div><div class="ttdeci">void insert_ABR_node(NodeBST **BSTtree, char *path, char c, int depth)</div><div class="ttdoc">Inserting a node in a BST. Example :</div><div class="ttdef"><b>Definition:</b> Dictionary.c:87</div></div>
+<div class="ttc" id="a_dictionary_8h_html_a9688a949b65f2154e14b498fb8ad6bc9"><div class="ttname"><a href="_dictionary_8h.html#a9688a949b65f2154e14b498fb8ad6bc9">create_dictio</a></div><div class="ttdeci">NodeBST * create_dictio(Node *tree)</div><div class="ttdoc">Dictionary and BST creation function. Example :</div><div class="ttdef"><b>Definition:</b> Dictionary.c:46</div></div>
+<div class="ttc" id="a_dictionary_8h_html_aa503872bdd6db6c5f160844b54d06e30"><div class="ttname"><a href="_dictionary_8h.html#aa503872bdd6db6c5f160844b54d06e30">depth_tree</a></div><div class="ttdeci">int depth_tree(Node *tree)</div><div class="ttdoc">Calculation of the maximum depth of a tree. Example :</div><div class="ttdef"><b>Definition:</b> Dictionary.c:73</div></div>
+<div class="ttc" id="a_dictionary_8h_html_aa8381ea0b50078805a0fa8aac4d43b0c"><div class="ttname"><a href="_dictionary_8h.html#aa8381ea0b50078805a0fa8aac4d43b0c">create_ABR_node</a></div><div class="ttdeci">NodeBST * create_ABR_node(char *path, char c, int depth)</div><div class="ttdoc">Creating a new node. Example :</div><div class="ttdef"><b>Definition:</b> Dictionary.c:123</div></div>
+<div class="ttc" id="a_dictionary_8h_html_af6e596a36e204ce46f67f25e69cc1032"><div class="ttname"><a href="_dictionary_8h.html#af6e596a36e204ce46f67f25e69cc1032">find_path</a></div><div class="ttdeci">void find_path(Node *tree, char *path, int count, NodeBST **BSTtree, int depth)</div><div class="ttdoc">Function that writes a binary string to a dictionary and a binary search tree from a character tree....</div><div class="ttdef"><b>Definition:</b> Dictionary.c:8</div></div>
+<div class="ttc" id="astruct_node_b_s_t_html"><div class="ttname"><a href="struct_node_b_s_t.html">NodeBST</a></div><div class="ttdef"><b>Definition:</b> Structures.h:54</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

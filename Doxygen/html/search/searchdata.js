@@ -3,7 +3,7 @@ var indexSectionsWithContent =
   0: "bcdefilmnostv",
   1: "dln",
   2: "bdeost",
-  3: "cefimostv",
+  3: "cdefimostv",
   4: "dln"
 };
 

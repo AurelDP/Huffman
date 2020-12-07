@@ -9,8 +9,8 @@ Header file containing the encoding function.
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \mbox{\hyperlink{_encoding_8h_a6674cd89915b1688c26b1d7e32f5c2a1}{encod}} ()
-\begin{DoxyCompactList}\small\item\em Converts each character in the text file to a character encoded by the dictionary. Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{_encoding_8h_a84d6b056539ce67d295934836c806e21}{encod}} (\mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$B\+S\+Ttree)
+\begin{DoxyCompactList}\small\item\em Converts each character in the text file to a character encoded by the B\+ST. Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -25,23 +25,23 @@ December 2020
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_encoding_8h_a6674cd89915b1688c26b1d7e32f5c2a1}\label{_encoding_8h_a6674cd89915b1688c26b1d7e32f5c2a1}} 
+\mbox{\Hypertarget{_encoding_8h_a84d6b056539ce67d295934836c806e21}\label{_encoding_8h_a84d6b056539ce67d295934836c806e21}} 
 \index{Encoding.h@{Encoding.h}!encod@{encod}}
 \index{encod@{encod}!Encoding.h@{Encoding.h}}
 \doxysubsubsection{\texorpdfstring{encod()}{encod()}}
-{\footnotesize\ttfamily void encod (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void encod (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$}]{B\+S\+Ttree }\end{DoxyParamCaption})}
 
 
 
-Converts each character in the text file to a character encoded by the dictionary. Example \+: 
+Converts each character in the text file to a character encoded by the B\+ST. Example \+: 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{_encoding_8h_a6674cd89915b1688c26b1d7e32f5c2a1}{encod}}();}
+\DoxyCodeLine{\mbox{\hyperlink{_encoding_8h_a84d6b056539ce67d295934836c806e21}{encod}}(BSTtree);}
 \end{DoxyCode}
  
 \begin{DoxyParams}{Parameters}
-{\em Nothing.} & \\
+{\em Node\+B\+S\+T$\ast$} & B\+S\+Ttree, binary search tree containing characters and their codes. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}

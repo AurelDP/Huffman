@@ -83,40 +83,51 @@ Functions</h2></td></tr>
 <tr class="memitem:add1ee5b39086f00f3f61889f5c6339ed"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_binary_translation_8h.html#add1ee5b39086f00f3f61889f5c6339ed">text2binary</a> ()</td></tr>
 <tr class="memdesc:add1ee5b39086f00f3f61889f5c6339ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a text file into a binary file.  <a href="_binary_translation_8h.html#add1ee5b39086f00f3f61889f5c6339ed">More...</a><br /></td></tr>
 <tr class="separator:add1ee5b39086f00f3f61889f5c6339ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0edecd5f54f3f71f46ffd686d93381c1"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_binary_translation_8h.html#a0edecd5f54f3f71f46ffd686d93381c1">char2binary</a> (char c)</td></tr>
-<tr class="memdesc:a0edecd5f54f3f71f46ffd686d93381c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a text file into a binary file. Example :  <a href="_binary_translation_8h.html#a0edecd5f54f3f71f46ffd686d93381c1">More...</a><br /></td></tr>
-<tr class="separator:a0edecd5f54f3f71f46ffd686d93381c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af01095cc0fc24fad54d2d57dea5f6fb7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_binary_translation_8h.html#af01095cc0fc24fad54d2d57dea5f6fb7">char2binary</a> (char c, char **string)</td></tr>
+<tr class="memdesc:af01095cc0fc24fad54d2d57dea5f6fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts one character into binary code. Example :  <a href="_binary_translation_8h.html#af01095cc0fc24fad54d2d57dea5f6fb7">More...</a><br /></td></tr>
+<tr class="separator:af01095cc0fc24fad54d2d57dea5f6fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Header file regrouping the functions for transforming text files into binary files. </p>
 <dl class="section author"><dt>Author</dt><dd>Aurelien DUVAL <a href="#" onclick="location.href='mai'+'lto:'+'aur'+'el'+'ien'+'.d'+'uva'+'l.'+'19@'+'ef'+'rei'+'.n'+'et'; return false;">aurel<span style="display: none;">.nosp@m.</span>ien.<span style="display: none;">.nosp@m.</span>duval<span style="display: none;">.nosp@m.</span>.19@<span style="display: none;">.nosp@m.</span>efrei<span style="display: none;">.nosp@m.</span>.net</a> </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>December 2020 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a0edecd5f54f3f71f46ffd686d93381c1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0edecd5f54f3f71f46ffd686d93381c1">&#9670;&nbsp;</a></span>char2binary()</h2>
+<a id="af01095cc0fc24fad54d2d57dea5f6fb7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af01095cc0fc24fad54d2d57dea5f6fb7">&#9670;&nbsp;</a></span>char2binary()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char* char2binary </td>
+          <td class="memname">void char2binary </td>
           <td>(</td>
           <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>c</em></td><td>)</td>
+          <td class="paramname"><em>c</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>string</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Converts a text file into a binary file. Example : </p>
-<div class="fragment"><div class="line">fprintf(file_bin, <a class="code" href="_binary_translation_8h.html#a0edecd5f54f3f71f46ffd686d93381c1">char2binary</a>(c));</div>
+<p>Converts one character into binary code. Example : </p>
+<div class="fragment"><div class="line"><a class="code" href="_binary_translation_8h.html#af01095cc0fc24fad54d2d57dea5f6fb7">char2binary</a>(c, &amp;bin);</div>
 </div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">char</td><td>c, character to convert to binary. </td></tr>
+    <tr><td class="paramname">char**</td><td>string, string that will contain the binary code. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>A string of characters containing the binary code of the character given in parameter. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Nothing. </dd></dl>
 
 </div>
 </div>
@@ -147,7 +158,7 @@ Functions</h2></td></tr>
 </div>
 </div>
 </div><!-- contents -->
-<div class="ttc" id="a_binary_translation_8h_html_a0edecd5f54f3f71f46ffd686d93381c1"><div class="ttname"><a href="_binary_translation_8h.html#a0edecd5f54f3f71f46ffd686d93381c1">char2binary</a></div><div class="ttdeci">char * char2binary(char c)</div><div class="ttdoc">Converts a text file into a binary file. Example :</div><div class="ttdef"><b>Definition:</b> BinaryTranslation.c:33</div></div>
+<div class="ttc" id="a_binary_translation_8h_html_af01095cc0fc24fad54d2d57dea5f6fb7"><div class="ttname"><a href="_binary_translation_8h.html#af01095cc0fc24fad54d2d57dea5f6fb7">char2binary</a></div><div class="ttdeci">void char2binary(char c, char **string)</div><div class="ttdoc">Converts one character into binary code. Example :</div><div class="ttdef"><b>Definition:</b> BinaryTranslation.c:43</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
