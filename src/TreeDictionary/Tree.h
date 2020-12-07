@@ -63,7 +63,7 @@ void insert_node(ListTree** list, Node* node);
 /**
  * \brief Huffman tree creation function. Example :
  * \code{.c}
- * Node* huffman_tree = create_huffman_tree(&list_tree);
+ * Node* huffman_tree = create_huffman_tree(&list);
  * \endcode
  * \param ListTree** list, list from which the Huffman tree is created.
  * \return Node*, the new Huffman tree.

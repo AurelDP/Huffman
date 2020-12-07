@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['min_5flist_51',['min_list',['../_tree_8h.html#a7d18d3a4e810ab4fb8c2da00914e2c4a',1,'Tree.c']]]
+  ['insert_5fabr_5fnode_52',['insert_ABR_node',['../_dictionary_8h.html#a722d7c2d54d251d86f1c2246202bfaf0',1,'Dictionary.c']]],
+  ['insert_5fnode_53',['insert_node',['../_tree_8h.html#a82055fa6b4d10f3b07e047d26ae8ee6e',1,'Tree.c']]]
 ];

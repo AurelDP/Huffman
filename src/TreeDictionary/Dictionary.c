@@ -13,6 +13,7 @@ NodeBST* create_dictio(Node* tree) {
     return NULL;
 }
 
+// Simple tree depth recovery function
 int depth_tree(Node* tree) {
     return 0;
 }
@@ -25,6 +26,7 @@ NodeBST* create_ABR_node(char* path, char c, int depth) {
     return NULL;
 }
 
+// Simple memory free function
 void free_node_ABR(NodeBST* node) {
     
 }

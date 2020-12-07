@@ -38,11 +38,19 @@ typedef struct Node {
 	struct Node* left;
 }Node;
 
+/**
+ * \typedef struct DataBST
+ * \brief A data storing a character (char) and a binary code (char*).
+ */
 typedef struct DataBST {
 	char chara;
 	char* code;
 }DataBST;
 
+/**
+ * \typedef struct NodeBST
+ * \brief A BST node containing data and pointers to two other nodes.
+ */
 typedef struct NodeBST {
 	struct DataBST* info;
 	struct NodeBST* right;

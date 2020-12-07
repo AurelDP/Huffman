@@ -10,8 +10,8 @@ Header file regrouping the functions for transforming text files into binary fil
 \item 
 int \mbox{\hyperlink{_binary_translation_8h_add1ee5b39086f00f3f61889f5c6339ed}{text2binary}} ()
 \begin{DoxyCompactList}\small\item\em Converts a text file into a binary file. \end{DoxyCompactList}\item 
-char $\ast$ \mbox{\hyperlink{_binary_translation_8h_a0edecd5f54f3f71f46ffd686d93381c1}{char2binary}} (char c)
-\begin{DoxyCompactList}\small\item\em Converts a text file into a binary file. Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{_binary_translation_8h_af01095cc0fc24fad54d2d57dea5f6fb7}{char2binary}} (char c, char $\ast$$\ast$string)
+\begin{DoxyCompactList}\small\item\em Converts one character into binary code. Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -26,27 +26,29 @@ December 2020
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_binary_translation_8h_a0edecd5f54f3f71f46ffd686d93381c1}\label{_binary_translation_8h_a0edecd5f54f3f71f46ffd686d93381c1}} 
+\mbox{\Hypertarget{_binary_translation_8h_af01095cc0fc24fad54d2d57dea5f6fb7}\label{_binary_translation_8h_af01095cc0fc24fad54d2d57dea5f6fb7}} 
 \index{BinaryTranslation.h@{BinaryTranslation.h}!char2binary@{char2binary}}
 \index{char2binary@{char2binary}!BinaryTranslation.h@{BinaryTranslation.h}}
 \doxysubsubsection{\texorpdfstring{char2binary()}{char2binary()}}
-{\footnotesize\ttfamily char$\ast$ char2binary (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily void char2binary (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{char $\ast$$\ast$}]{string }\end{DoxyParamCaption})}
 
 
 
-Converts a text file into a binary file. Example \+: 
+Converts one character into binary code. Example \+: 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{fprintf(file\_bin, \mbox{\hyperlink{_binary_translation_8h_a0edecd5f54f3f71f46ffd686d93381c1}{char2binary}}(c));}
+\DoxyCodeLine{\mbox{\hyperlink{_binary_translation_8h_af01095cc0fc24fad54d2d57dea5f6fb7}{char2binary}}(c, \&bin);}
 \end{DoxyCode}
  
 \begin{DoxyParams}{Parameters}
 {\em char} & c, character to convert to binary. \\
 \hline
+{\em char$\ast$$\ast$} & string, string that will contain the binary code. \\
+\hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-A string of characters containing the binary code of the character given in parameter. 
+Nothing. 
 \end{DoxyReturn}
 \mbox{\Hypertarget{_binary_translation_8h_add1ee5b39086f00f3f61889f5c6339ed}\label{_binary_translation_8h_add1ee5b39086f00f3f61889f5c6339ed}} 
 \index{BinaryTranslation.h@{BinaryTranslation.h}!text2binary@{text2binary}}
