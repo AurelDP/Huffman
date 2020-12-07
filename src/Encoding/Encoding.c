@@ -3,6 +3,6 @@
 #include "Encoding.h"
 
 
-void encod() {
+void encod(NodeBST* BSTtree) {
 	
 }

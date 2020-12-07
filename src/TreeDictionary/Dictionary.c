@@ -5,14 +5,26 @@
 #include "Dictionary.h"
 
 
-void find_path(Node* tree, char* path, int count) {
+void find_path(Node* tree, char* path, int count, NodeBST** BSTtree, int depth) {
     
 }
 
-void create_dictio(Node* tree) {
-    
+NodeBST* create_dictio(Node* tree) {
+    return NULL;
 }
 
 int depth_tree(Node* tree) {
     return 0;
+}
+
+void insert_ABR_node(NodeBST** ABRtree, char* path, char c, int depth) {
+    
+}
+
+NodeBST* create_ABR_node(char* path, char c, int depth) {
+    return NULL;
+}
+
+void free_node_ABR(NodeBST* node) {
+    
 }
