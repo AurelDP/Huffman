@@ -7,6 +7,7 @@ int text2binary() {
     file_txt = fopen("Files/input.txt", "r");
     FILE* file_bin = NULL;
     file_bin = fopen("Files/binary.txt", "wb");
+    char* bin = (char*)malloc(sizeof(9));
 
     char c = 0;
 
@@ -14,7 +15,8 @@ int text2binary() {
         do {
             c = fgetc(file_txt);
             if (c != EOF) {
-                fprintf(file_bin, char2binary(c));
+                char2binary(c, &bin);
+                fprintf(file_bin, bin);
             }
         } while (c != EOF);
         rewind(file_txt);
@@ -24,14 +26,16 @@ int text2binary() {
     }
     else {
         printf("\nError: Input file could not be opened!\n");
+        fclose(file_bin);
         return 0;
     }
 
+    free(bin);
 }
 
-char* char2binary(char c) {
-    char* bin = (char*)malloc(9 * sizeof(char));
+void char2binary(char c, char** string) {
     int ascii = (int)c;
+    char* bin = *string;
     int temp[8] = { 0 };
 
     for (int i = 0; ascii > 0; i++) {
@@ -44,6 +48,4 @@ char* char2binary(char c) {
     }
 
     bin[8] = '\0';
-
-    return bin;
 }

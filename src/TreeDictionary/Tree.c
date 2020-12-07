@@ -4,43 +4,6 @@
 
 
 //-------------------------------------------------------------
-// TRANSFORMATION FUNCTIONS LIST -> NODE LIST
-//-------------------------------------------------------------
-
-
-Node* create_node(Data* info) {
-	Node* new_node = (Node*)malloc(sizeof(Node));
-	new_node->info = info;
-	new_node->right = NULL;
-	new_node->left = NULL;
-	return new_node;
-}
-
-ListTree* create_list_tree(Data* info) {
-	ListTree* new_list = (ListTree*)malloc(sizeof(ListTree));
-	new_list->next = NULL;
-	new_list->node = create_node(info);
-	return new_list;
-}
-
-ListTree* transform_list(List* list) {
-	ListTree* new_list = NULL;
-	ListTree* temp = new_list;
-	if (list != NULL) {
-		new_list = create_list_tree(list->data);
-		temp = new_list;
-		list = list->next;
-	}
-	while (list != NULL) {
-		temp->next = create_list_tree(list->data);
-		temp = temp->next;
-		list = list->next;
-	}
-	return new_list;
-}
-
-
-//-------------------------------------------------------------
 // LIST TRANSFORMATION AND TREE CREATION FUNCTIONS
 //-------------------------------------------------------------
 
@@ -129,13 +92,6 @@ Node* create_huffman_tree(ListTree** list) {
 // FREE FUNCTIONS
 //-------------------------------------------------------------
 
-
-void free_list(List* l) {
-	if (l != NULL) {
-		free_list(l->next);
-		free(l);
-	}
-}
 
 void free_node(Node* node) {
 	if (node != NULL) {
