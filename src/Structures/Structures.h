@@ -18,14 +18,6 @@ typedef struct Data {
 	int occurence;
 }Data;
 
-/**
- * \typedef struct List
- * \brief A list of several data.
- */
-typedef struct List {
-	struct Data* data;
-	struct List* next;
-}List;
 
 /**
  * \typedef struct ListTree

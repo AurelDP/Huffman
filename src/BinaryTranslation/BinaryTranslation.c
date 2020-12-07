@@ -2,10 +2,10 @@
 #include <stdio.h>
 #include "BinaryTranslation.h"
 
-void text2binary() {
-    
+int text2binary() {
+    return 0;
 }
 
-char* char2binary(char c) {
-    return NULL;
+void char2binary(char c, char** string) {
+    
 }

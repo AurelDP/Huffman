@@ -32,15 +32,13 @@ int main(){
                 clock_t begin = clock();
                 printf("\nStart encoding :\n\n");
                 printf("Character recovery and classification...\n");
-                List* list = occurence();
-                ListTree* list_tree = transform_list(list);
+                ListTree* list = occurence();
                 printf("Creation of the Huffman tree...\n");
-                Node* huffman_tree = create_huffman_tree(&list_tree);
+                Node* huffman_tree = create_huffman_tree(&list);
                 printf("Creation of the dictionary...\n");
                 NodeBST* BSTtree = create_dictio(huffman_tree);
                 printf("Encoding...\n");
                 encod(BSTtree);
-                free_list(list);
                 free_node(huffman_tree);
                 free_node_ABR(BSTtree);
                 printf("Encoding completed in %.2f seconds !\n\n", (clock() - begin) / (float)CLOCKS_PER_SEC);

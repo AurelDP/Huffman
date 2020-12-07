@@ -3,14 +3,14 @@
 #include "Occurences.h"
 
 
-List* occurence() {
+ListTree* occurence() {
     return NULL;
 }
 
-List* create_new_link(char c) {
+ListTree* create_new_link(char c) {
     return NULL;
 }
 
-int verif_list(List* l, char c) {
+int verif_list(ListTree* l, char c) {
     return 0;
 }

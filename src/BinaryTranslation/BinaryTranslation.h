@@ -24,6 +24,6 @@ int text2binary();
  * \param char c, character to convert to binary.
  * \return A string of characters containing the binary code of the character given in parameter.
  */
-char* char2binary(char c);
+void char2binary(char c, char** string);
 
 #endif
