@@ -20,7 +20,7 @@
  * \param int count, counter corresponding to the current height of the tree.
  * \return Nothing.
  */
-void find_path(Node* tree, char* path, int count);
+void find_path(Node* tree, char* path, int count, NodeBST** BSTtree, int depth);
 
 /**
  * \brief Dictionary creation function. Example :
@@ -30,7 +30,7 @@ void find_path(Node* tree, char* path, int count);
  * \param Node* tree, Huffman tree.
  * \return Nothing.
  */
-void create_dictio(Node* tree);
+NodeBST* create_dictio(Node* tree);
 
 /**
  * \brief Calculation of the maximum depth of a tree. Example :
@@ -41,5 +41,9 @@ void create_dictio(Node* tree);
  * \return int, the depth.
  */
 int depth_tree(Node* tree);
+
+void insert_ABR_node(NodeBST** BSTtree, char* path, char c, int depth);
+NodeBST* create_ABR_node(char* path, char c, int depth);
+void free_node_ABR(NodeBST* node);
 
 #endif
