@@ -77,61 +77,42 @@ $(function() {
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// FONCTIONS DE TRANSFORMATION LISTE -&gt; LISTE DE NOEUDS</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment">// LIST TRANSFORMATION AND TREE CREATION FUNCTIONS</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<a class="code" href="struct_node.html">Node</a>* <a class="code" href="_tree_8h.html#acfe4cd8c92f7f171308d2cbacfe39735">create_node</a>(<a class="code" href="struct_data.html">Data</a>* info);</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<a class="code" href="struct_list_tree.html">ListTree</a>* <a class="code" href="_tree_8h.html#a5435747e42f5f6681fbe22d96daee250">create_list_tree</a>(<a class="code" href="struct_data.html">Data</a>* info);</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<a class="code" href="struct_list_tree.html">ListTree</a>* <a class="code" href="_tree_8h.html#abb5cc00ade1dffcf9c4ed39f7de30d3d">transform_list</a>(<a class="code" href="struct_list.html">List</a>* list);</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;<span class="comment">// FONCTIONS DE TRANSFORMATION DE LA LISTE ET CREATION ARBRE</span></div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<a class="code" href="struct_node.html">Node</a>* <a class="code" href="_tree_8h.html#a7d18d3a4e810ab4fb8c2da00914e2c4a">min_list</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list);</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<a class="code" href="struct_node.html">Node</a>* <a class="code" href="_tree_8h.html#a7d18d3a4e810ab4fb8c2da00914e2c4a">min_list</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list);</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tree_8h.html#a730a33075167438cc4fa5a9ade4d2cad">suppr_min_list</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list, <span class="keywordtype">char</span> c, <span class="keywordtype">int</span> occ);</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="keywordtype">int</span> <a class="code" href="_tree_8h.html#aee2096b2eb95717e4ee9961c70a2a819">size_of_list</a>(<a class="code" href="struct_list_tree.html">ListTree</a>* list);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;<a class="code" href="struct_node.html">Node</a>* <a class="code" href="_tree_8h.html#ad9b62304c1e4bac769b3b4c3a21fabe6">create_double_node</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list);</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tree_8h.html#a730a33075167438cc4fa5a9ade4d2cad">suppr_min_list</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list, <span class="keywordtype">char</span> c, <span class="keywordtype">int</span> occ);</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="keywordtype">int</span> <a class="code" href="_tree_8h.html#aee2096b2eb95717e4ee9961c70a2a819">size_of_list</a>(<a class="code" href="struct_list_tree.html">ListTree</a>* list);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tree_8h.html#a82055fa6b4d10f3b07e047d26ae8ee6e">insert_node</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list, <a class="code" href="struct_node.html">Node</a>* node);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<a class="code" href="struct_node.html">Node</a>* <a class="code" href="_tree_8h.html#ad878cf159d113a008cd1520b6f6f2dd6">create_huffman_tree</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list);</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<a class="code" href="struct_node.html">Node</a>* <a class="code" href="_tree_8h.html#ad9b62304c1e4bac769b3b4c3a21fabe6">create_double_node</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tree_8h.html#a82055fa6b4d10f3b07e047d26ae8ee6e">insert_node</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list, <a class="code" href="struct_node.html">Node</a>* node);</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<a class="code" href="struct_node.html">Node</a>* <a class="code" href="_tree_8h.html#ad878cf159d113a008cd1520b6f6f2dd6">create_huffman_tree</a>(<a class="code" href="struct_list_tree.html">ListTree</a>** list);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160; </div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="comment">// FONCTIONS FREE</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tree_8h.html#ac8e417f93d8ec556ed7646ab1c6f653b">free_list</a>(<a class="code" href="struct_list.html">List</a>* l);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tree_8h.html#a0aed6fd8e764732bb5533b022394c0eb">free_node</a>(<a class="code" href="struct_node.html">Node</a>* node);</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">// FREE FUNCTIONS</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="comment">//-------------------------------------------------------------</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="keywordtype">void</span> <a class="code" href="_tree_8h.html#a0aed6fd8e764732bb5533b022394c0eb">free_node</a>(<a class="code" href="struct_node.html">Node</a>* node);</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="a_tree_8h_html_a0aed6fd8e764732bb5533b022394c0eb"><div class="ttname"><a href="_tree_8h.html#a0aed6fd8e764732bb5533b022394c0eb">free_node</a></div><div class="ttdeci">void free_node(Node *node)</div><div class="ttdoc">Simple function for free a node.</div><div class="ttdef"><b>Definition:</b> Tree.c:140</div></div>
-<div class="ttc" id="a_tree_8h_html_a7d18d3a4e810ab4fb8c2da00914e2c4a"><div class="ttname"><a href="_tree_8h.html#a7d18d3a4e810ab4fb8c2da00914e2c4a">min_list</a></div><div class="ttdeci">Node * min_list(ListTree **list)</div><div class="ttdoc">Function that returns the minimum of a list of nodes. Example :</div><div class="ttdef"><b>Definition:</b> Tree.c:48</div></div>
-<div class="ttc" id="a_tree_8h_html_aee2096b2eb95717e4ee9961c70a2a819"><div class="ttname"><a href="_tree_8h.html#aee2096b2eb95717e4ee9961c70a2a819">size_of_list</a></div><div class="ttdeci">int size_of_list(ListTree *list)</div><div class="ttdoc">Simple function that gives the size of a list of nodes.</div><div class="ttdef"><b>Definition:</b> Tree.c:83</div></div>
-<div class="ttc" id="a_tree_8h_html_ac8e417f93d8ec556ed7646ab1c6f653b"><div class="ttname"><a href="_tree_8h.html#ac8e417f93d8ec556ed7646ab1c6f653b">free_list</a></div><div class="ttdeci">void free_list(List *l)</div><div class="ttdoc">Simple function for free a list.</div><div class="ttdef"><b>Definition:</b> Tree.c:133</div></div>
-<div class="ttc" id="a_tree_8h_html_a82055fa6b4d10f3b07e047d26ae8ee6e"><div class="ttname"><a href="_tree_8h.html#a82055fa6b4d10f3b07e047d26ae8ee6e">insert_node</a></div><div class="ttdeci">void insert_node(ListTree **list, Node *node)</div><div class="ttdoc">Function used to insert a node in a list of nodes.</div><div class="ttdef"><b>Definition:</b> Tree.c:105</div></div>
-<div class="ttc" id="a_tree_8h_html_acfe4cd8c92f7f171308d2cbacfe39735"><div class="ttname"><a href="_tree_8h.html#acfe4cd8c92f7f171308d2cbacfe39735">create_node</a></div><div class="ttdeci">Node * create_node(Data *info)</div><div class="ttdoc">Node creation function.</div><div class="ttdef"><b>Definition:</b> Tree.c:11</div></div>
-<div class="ttc" id="a_tree_8h_html_abb5cc00ade1dffcf9c4ed39f7de30d3d"><div class="ttname"><a href="_tree_8h.html#abb5cc00ade1dffcf9c4ed39f7de30d3d">transform_list</a></div><div class="ttdeci">ListTree * transform_list(List *list)</div><div class="ttdoc">Function to transform a list of data into a list of nodes.</div><div class="ttdef"><b>Definition:</b> Tree.c:26</div></div>
-<div class="ttc" id="astruct_list_tree_html"><div class="ttname"><a href="struct_list_tree.html">ListTree</a></div><div class="ttdef"><b>Definition:</b> Structures.h:34</div></div>
-<div class="ttc" id="astruct_data_html"><div class="ttname"><a href="struct_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Structures.h:16</div></div>
-<div class="ttc" id="a_tree_8h_html_a730a33075167438cc4fa5a9ade4d2cad"><div class="ttname"><a href="_tree_8h.html#a730a33075167438cc4fa5a9ade4d2cad">suppr_min_list</a></div><div class="ttdeci">void suppr_min_list(ListTree **list, char c, int occ)</div><div class="ttdoc">Deletes an item from a list based on its information. Example :</div><div class="ttdef"><b>Definition:</b> Tree.c:68</div></div>
-<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdef"><b>Definition:</b> Structures.h:43</div></div>
-<div class="ttc" id="a_tree_8h_html_a5435747e42f5f6681fbe22d96daee250"><div class="ttname"><a href="_tree_8h.html#a5435747e42f5f6681fbe22d96daee250">create_list_tree</a></div><div class="ttdeci">ListTree * create_list_tree(Data *info)</div><div class="ttdoc">Function to create an element containing a node and a pointer to the following element.</div><div class="ttdef"><b>Definition:</b> Tree.c:19</div></div>
-<div class="ttc" id="astruct_list_html"><div class="ttname"><a href="struct_list.html">List</a></div><div class="ttdef"><b>Definition:</b> Structures.h:25</div></div>
-<div class="ttc" id="a_tree_8h_html_ad9b62304c1e4bac769b3b4c3a21fabe6"><div class="ttname"><a href="_tree_8h.html#ad9b62304c1e4bac769b3b4c3a21fabe6">create_double_node</a></div><div class="ttdeci">Node * create_double_node(ListTree **list)</div><div class="ttdoc">Function to create a node from two old nodes.</div><div class="ttdef"><b>Definition:</b> Tree.c:92</div></div>
-<div class="ttc" id="a_tree_8h_html_ad878cf159d113a008cd1520b6f6f2dd6"><div class="ttname"><a href="_tree_8h.html#ad878cf159d113a008cd1520b6f6f2dd6">create_huffman_tree</a></div><div class="ttdeci">Node * create_huffman_tree(ListTree **list)</div><div class="ttdoc">Huffman tree creation function. Example :</div><div class="ttdef"><b>Definition:</b> Tree.c:112</div></div>
+<div class="ttc" id="a_tree_8h_html_a0aed6fd8e764732bb5533b022394c0eb"><div class="ttname"><a href="_tree_8h.html#a0aed6fd8e764732bb5533b022394c0eb">free_node</a></div><div class="ttdeci">void free_node(Node *node)</div><div class="ttdoc">Simple function for free a node.</div><div class="ttdef"><b>Definition:</b> Tree.c:125</div></div>
+<div class="ttc" id="a_tree_8h_html_a7d18d3a4e810ab4fb8c2da00914e2c4a"><div class="ttname"><a href="_tree_8h.html#a7d18d3a4e810ab4fb8c2da00914e2c4a">min_list</a></div><div class="ttdeci">Node * min_list(ListTree **list)</div><div class="ttdoc">Function that returns the minimum of a list of nodes. Example :</div><div class="ttdef"><b>Definition:</b> Tree.c:11</div></div>
+<div class="ttc" id="a_tree_8h_html_aee2096b2eb95717e4ee9961c70a2a819"><div class="ttname"><a href="_tree_8h.html#aee2096b2eb95717e4ee9961c70a2a819">size_of_list</a></div><div class="ttdeci">int size_of_list(ListTree *list)</div><div class="ttdoc">Simple function that gives the size of a list of nodes.</div><div class="ttdef"><b>Definition:</b> Tree.c:61</div></div>
+<div class="ttc" id="a_tree_8h_html_a82055fa6b4d10f3b07e047d26ae8ee6e"><div class="ttname"><a href="_tree_8h.html#a82055fa6b4d10f3b07e047d26ae8ee6e">insert_node</a></div><div class="ttdeci">void insert_node(ListTree **list, Node *node)</div><div class="ttdoc">Function used to insert a node in a list of nodes.</div><div class="ttdef"><b>Definition:</b> Tree.c:91</div></div>
+<div class="ttc" id="astruct_list_tree_html"><div class="ttname"><a href="struct_list_tree.html">ListTree</a></div><div class="ttdef"><b>Definition:</b> Structures.h:26</div></div>
+<div class="ttc" id="a_tree_8h_html_a730a33075167438cc4fa5a9ade4d2cad"><div class="ttname"><a href="_tree_8h.html#a730a33075167438cc4fa5a9ade4d2cad">suppr_min_list</a></div><div class="ttdeci">void suppr_min_list(ListTree **list, char c, int occ)</div><div class="ttdoc">Deletes an item from a list based on its information. Example :</div><div class="ttdef"><b>Definition:</b> Tree.c:37</div></div>
+<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdef"><b>Definition:</b> Structures.h:35</div></div>
+<div class="ttc" id="a_tree_8h_html_ad9b62304c1e4bac769b3b4c3a21fabe6"><div class="ttname"><a href="_tree_8h.html#ad9b62304c1e4bac769b3b4c3a21fabe6">create_double_node</a></div><div class="ttdeci">Node * create_double_node(ListTree **list)</div><div class="ttdoc">Function to create a node from two old nodes.</div><div class="ttdef"><b>Definition:</b> Tree.c:71</div></div>
+<div class="ttc" id="a_tree_8h_html_ad878cf159d113a008cd1520b6f6f2dd6"><div class="ttname"><a href="_tree_8h.html#ad878cf159d113a008cd1520b6f6f2dd6">create_huffman_tree</a></div><div class="ttdeci">Node * create_huffman_tree(ListTree **list)</div><div class="ttdoc">Huffman tree creation function. Example :</div><div class="ttdef"><b>Definition:</b> Tree.c:98</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

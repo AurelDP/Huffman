@@ -11,11 +11,11 @@
 #include "../Structures/Structures.h"
 
 /**
- * \brief Converts each character in the text file to a character encoded by the dictionary. Example :
+ * \brief Converts each character in the text file to a character encoded by the BST. Example :
  * \code{.c}
- * encod();
+ * encod(BSTtree);
  * \endcode
- * \param Nothing.
+ * \param NodeBST* BSTtree, binary search tree containing characters and their codes.
  * \return Nothing.
  */
 void encod(NodeBST* BSTtree);

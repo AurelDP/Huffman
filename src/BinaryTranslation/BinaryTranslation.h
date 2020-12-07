@@ -17,12 +17,13 @@
 int text2binary();
 
 /**
- * \brief Converts a text file into a binary file. Example :
+ * \brief Converts one character into binary code. Example :
  * \code{.c}
- * fprintf(file_bin, char2binary(c));
+ * char2binary(c, &bin);
  * \endcode
  * \param char c, character to convert to binary.
- * \return A string of characters containing the binary code of the character given in parameter.
+ * \param char** string, string that will contain the binary code.
+ * \return Nothing.
  */
 void char2binary(char c, char** string);
 

@@ -11,17 +11,17 @@
 #include "../Structures/Structures.h"
 
 /**
- * \brief Function to create a list of data from a text file. Example :
+ * \brief Function to create a list of nodes with data from a text file. Example :
  * \code{.c}
- * List* list = occurence();
+ * ListTree* list = occurence();
  * \endcode
  * \param Nothing.
- * \return A list of data.
+ * \return A list of nodes.
  */
 ListTree* occurence();
 
 /**
- * \brief Creates an element of a list from a character and returns it. Example :
+ * \brief Creates an element of a list of nodes from a character and returns it. Example :
  * \code{.c}
  * temp->next = create_new_link(c);
  * \endcode

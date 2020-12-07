@@ -79,32 +79,41 @@ $(function() {
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordtype">int</span> occurence;</div>
 <div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="_structures_8h.html#a2ef28d3cd107dc4d69261664852846be">   19</a></span>&#160;}<a class="code" href="_structures_8h.html#a2ef28d3cd107dc4d69261664852846be">Data</a>;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="struct_list.html">   25</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_list.html">List</a> {</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_data.html">Data</a>* data;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_list.html">List</a>* next;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="_structures_8h.html#a75aaa4f217b2724d65e5648b6d8b9d7d">   28</a></span>&#160;}<a class="code" href="_structures_8h.html#a75aaa4f217b2724d65e5648b6d8b9d7d">List</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="struct_list_tree.html">   34</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_list_tree.html">ListTree</a> {</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_node.html">Node</a>* node;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_list_tree.html">ListTree</a>* next;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="_structures_8h.html#a26ed5bd94c2cf07a387549d19904b95c">   37</a></span>&#160;}<a class="code" href="_structures_8h.html#a26ed5bd94c2cf07a387549d19904b95c">ListTree</a>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160; </div>
-<div class="line"><a name="l00043"></a><span class="lineno"><a class="line" href="struct_node.html">   43</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_node.html">Node</a> {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_data.html">Data</a>* info;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_node.html">Node</a>* right;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_node.html">Node</a>* left;</div>
-<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="_structures_8h.html#a9cf2efdb4ec5c59749c71c81ce1cf726">   47</a></span>&#160;}<a class="code" href="_structures_8h.html#a9cf2efdb4ec5c59749c71c81ce1cf726">Node</a>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="struct_list_tree.html">   26</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_list_tree.html">ListTree</a> {</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_node.html">Node</a>* node;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_list_tree.html">ListTree</a>* next;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="_structures_8h.html#a26ed5bd94c2cf07a387549d19904b95c">   29</a></span>&#160;}<a class="code" href="_structures_8h.html#a26ed5bd94c2cf07a387549d19904b95c">ListTree</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="struct_node.html">   35</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_node.html">Node</a> {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_data.html">Data</a>* info;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_node.html">Node</a>* right;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_node.html">Node</a>* left;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="_structures_8h.html#a9cf2efdb4ec5c59749c71c81ce1cf726">   39</a></span>&#160;}<a class="code" href="_structures_8h.html#a9cf2efdb4ec5c59749c71c81ce1cf726">Node</a>;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
+<div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="struct_data_b_s_t.html">   45</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_data_b_s_t.html">DataBST</a> {</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">char</span> chara;</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">char</span>* code;</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="_structures_8h.html#a2abb61bcb176fc415d489d77a5ce2be4">   48</a></span>&#160;}<a class="code" href="_structures_8h.html#a2abb61bcb176fc415d489d77a5ce2be4">DataBST</a>;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="struct_node_b_s_t.html">   54</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_node_b_s_t.html">NodeBST</a> {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_data_b_s_t.html">DataBST</a>* info;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_node_b_s_t.html">NodeBST</a>* right;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keyword">struct </span><a class="code" href="struct_node_b_s_t.html">NodeBST</a>* left;</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="_structures_8h.html#a34cb1c0ea28e9b0cb8919af7ad0d20ac">   58</a></span>&#160;}<a class="code" href="_structures_8h.html#a34cb1c0ea28e9b0cb8919af7ad0d20ac">NodeBST</a>;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="astruct_data_b_s_t_html"><div class="ttname"><a href="struct_data_b_s_t.html">DataBST</a></div><div class="ttdef"><b>Definition:</b> Structures.h:45</div></div>
 <div class="ttc" id="a_structures_8h_html_a2ef28d3cd107dc4d69261664852846be"><div class="ttname"><a href="_structures_8h.html#a2ef28d3cd107dc4d69261664852846be">Data</a></div><div class="ttdeci">struct Data Data</div><div class="ttdoc">A data storing a character (char) and an occurrence (int).</div></div>
-<div class="ttc" id="astruct_list_tree_html"><div class="ttname"><a href="struct_list_tree.html">ListTree</a></div><div class="ttdef"><b>Definition:</b> Structures.h:34</div></div>
+<div class="ttc" id="astruct_list_tree_html"><div class="ttname"><a href="struct_list_tree.html">ListTree</a></div><div class="ttdef"><b>Definition:</b> Structures.h:26</div></div>
 <div class="ttc" id="astruct_data_html"><div class="ttname"><a href="struct_data.html">Data</a></div><div class="ttdef"><b>Definition:</b> Structures.h:16</div></div>
-<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdef"><b>Definition:</b> Structures.h:43</div></div>
-<div class="ttc" id="astruct_list_html"><div class="ttname"><a href="struct_list.html">List</a></div><div class="ttdef"><b>Definition:</b> Structures.h:25</div></div>
+<div class="ttc" id="astruct_node_html"><div class="ttname"><a href="struct_node.html">Node</a></div><div class="ttdef"><b>Definition:</b> Structures.h:35</div></div>
+<div class="ttc" id="a_structures_8h_html_a34cb1c0ea28e9b0cb8919af7ad0d20ac"><div class="ttname"><a href="_structures_8h.html#a34cb1c0ea28e9b0cb8919af7ad0d20ac">NodeBST</a></div><div class="ttdeci">struct NodeBST NodeBST</div><div class="ttdoc">A BST node containing data and pointers to two other nodes.</div></div>
 <div class="ttc" id="a_structures_8h_html_a26ed5bd94c2cf07a387549d19904b95c"><div class="ttname"><a href="_structures_8h.html#a26ed5bd94c2cf07a387549d19904b95c">ListTree</a></div><div class="ttdeci">struct ListTree ListTree</div><div class="ttdoc">A list of nodes (each node contains data and pointers to other nodes).</div></div>
+<div class="ttc" id="astruct_node_b_s_t_html"><div class="ttname"><a href="struct_node_b_s_t.html">NodeBST</a></div><div class="ttdef"><b>Definition:</b> Structures.h:54</div></div>
 <div class="ttc" id="a_structures_8h_html_a9cf2efdb4ec5c59749c71c81ce1cf726"><div class="ttname"><a href="_structures_8h.html#a9cf2efdb4ec5c59749c71c81ce1cf726">Node</a></div><div class="ttdeci">struct Node Node</div><div class="ttdoc">A node containing data and pointers to two other nodes.</div></div>
-<div class="ttc" id="a_structures_8h_html_a75aaa4f217b2724d65e5648b6d8b9d7d"><div class="ttname"><a href="_structures_8h.html#a75aaa4f217b2724d65e5648b6d8b9d7d">List</a></div><div class="ttdeci">struct List List</div><div class="ttdoc">A list of several data.</div></div>
+<div class="ttc" id="a_structures_8h_html_a2abb61bcb176fc415d489d77a5ce2be4"><div class="ttname"><a href="_structures_8h.html#a2abb61bcb176fc415d489d77a5ce2be4">DataBST</a></div><div class="ttdeci">struct DataBST DataBST</div><div class="ttdoc">A data storing a character (char) and a binary code (char*).</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20

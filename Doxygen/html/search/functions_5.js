@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['occurence_52',['occurence',['../_occurences_8h.html#a277033ed6f3ec689cf8e31d7fa266b65',1,'Occurences.c']]]
+  ['min_5flist_54',['min_list',['../_tree_8h.html#a7d18d3a4e810ab4fb8c2da00914e2c4a',1,'Tree.c']]]
 ];

@@ -9,10 +9,18 @@ Header file containing the dictionary generation functions.
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-int \mbox{\hyperlink{_dictionary_8h_a63b7963c9a1e8b5ee625b8f2ac7ef0f4}{find\+\_\+path}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree, char c, char $\ast$$\ast$path)
-\begin{DoxyCompactList}\small\item\em Function that returns a string of characters consisting of 0 or 1 depending on the path taken to arrive at a given character. Example \+: \end{DoxyCompactList}\item 
-void \mbox{\hyperlink{_dictionary_8h_a2061c341341751829db6d3c992e81f24}{create\+\_\+dictio}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree, \mbox{\hyperlink{struct_list}{List}} $\ast$l)
-\begin{DoxyCompactList}\small\item\em Dictionary creation function. Example \+: \end{DoxyCompactList}\end{DoxyCompactItemize}
+void \mbox{\hyperlink{_dictionary_8h_af6e596a36e204ce46f67f25e69cc1032}{find\+\_\+path}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree, char $\ast$path, int count, \mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$$\ast$B\+S\+Ttree, int depth)
+\begin{DoxyCompactList}\small\item\em Function that writes a binary string to a dictionary and a binary search tree from a character tree. Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$ \mbox{\hyperlink{_dictionary_8h_a9688a949b65f2154e14b498fb8ad6bc9}{create\+\_\+dictio}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Dictionary and B\+ST creation function. Example \+: \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_dictionary_8h_aa503872bdd6db6c5f160844b54d06e30}{depth\+\_\+tree}} (\mbox{\hyperlink{struct_node}{Node}} $\ast$tree)
+\begin{DoxyCompactList}\small\item\em Calculation of the maximum depth of a tree. Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_dictionary_8h_a722d7c2d54d251d86f1c2246202bfaf0}{insert\+\_\+\+A\+B\+R\+\_\+node}} (\mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$$\ast$B\+S\+Ttree, char $\ast$path, char c, int depth)
+\begin{DoxyCompactList}\small\item\em Inserting a node in a B\+ST. Example \+: \end{DoxyCompactList}\item 
+\mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$ \mbox{\hyperlink{_dictionary_8h_aa8381ea0b50078805a0fa8aac4d43b0c}{create\+\_\+\+A\+B\+R\+\_\+node}} (char $\ast$path, char c, int depth)
+\begin{DoxyCompactList}\small\item\em Creating a new node. Example \+: \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_dictionary_8h_a140fcfb61ec6b60b7a8880f7400d9b05}{free\+\_\+node\+\_\+\+A\+BR}} (\mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$node)
+\begin{DoxyCompactList}\small\item\em Simple memory free function. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -27,53 +35,145 @@ December 2020
 
 
 \doxysubsection{Function Documentation}
-\mbox{\Hypertarget{_dictionary_8h_a2061c341341751829db6d3c992e81f24}\label{_dictionary_8h_a2061c341341751829db6d3c992e81f24}} 
-\index{Dictionary.h@{Dictionary.h}!create\_dictio@{create\_dictio}}
-\index{create\_dictio@{create\_dictio}!Dictionary.h@{Dictionary.h}}
-\doxysubsubsection{\texorpdfstring{create\_dictio()}{create\_dictio()}}
-{\footnotesize\ttfamily void create\+\_\+dictio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree,  }\item[{\mbox{\hyperlink{struct_list}{List}} $\ast$}]{l }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{_dictionary_8h_aa8381ea0b50078805a0fa8aac4d43b0c}\label{_dictionary_8h_aa8381ea0b50078805a0fa8aac4d43b0c}} 
+\index{Dictionary.h@{Dictionary.h}!create\_ABR\_node@{create\_ABR\_node}}
+\index{create\_ABR\_node@{create\_ABR\_node}!Dictionary.h@{Dictionary.h}}
+\doxysubsubsection{\texorpdfstring{create\_ABR\_node()}{create\_ABR\_node()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}}$\ast$ create\+\_\+\+A\+B\+R\+\_\+node (\begin{DoxyParamCaption}\item[{char $\ast$}]{path,  }\item[{char}]{c,  }\item[{int}]{depth }\end{DoxyParamCaption})}
 
 
 
-Dictionary creation function. Example \+: 
+Creating a new node. Example \+: 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\mbox{\hyperlink{_dictionary_8h_a2061c341341751829db6d3c992e81f24}{create\_dictio}}(huffman\_tree, list)}
+\DoxyCodeLine{\mbox{\hyperlink{struct_node_b_s_t}{NodeBST}}* \textcolor{keyword}{new} = \mbox{\hyperlink{_dictionary_8h_aa8381ea0b50078805a0fa8aac4d43b0c}{create\_ABR\_node}}(path, c, depth);}
 \end{DoxyCode}
  
 \begin{DoxyParams}{Parameters}
-{\em Node$\ast$} & tree, Huffman tree. \\
+{\em char$\ast$} & path, the binary path of the new char. \\
 \hline
-{\em List$\ast$} & l, list of characters in the text file. \\
+{\em char} & c, the new char. \textbackslash{}parem int depth, the depth used to allocate the new binary path. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
 Nothing. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_dictionary_8h_a63b7963c9a1e8b5ee625b8f2ac7ef0f4}\label{_dictionary_8h_a63b7963c9a1e8b5ee625b8f2ac7ef0f4}} 
-\index{Dictionary.h@{Dictionary.h}!find\_path@{find\_path}}
-\index{find\_path@{find\_path}!Dictionary.h@{Dictionary.h}}
-\doxysubsubsection{\texorpdfstring{find\_path()}{find\_path()}}
-{\footnotesize\ttfamily int find\+\_\+path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree,  }\item[{char}]{c,  }\item[{char $\ast$$\ast$}]{path }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{_dictionary_8h_a9688a949b65f2154e14b498fb8ad6bc9}\label{_dictionary_8h_a9688a949b65f2154e14b498fb8ad6bc9}} 
+\index{Dictionary.h@{Dictionary.h}!create\_dictio@{create\_dictio}}
+\index{create\_dictio@{create\_dictio}!Dictionary.h@{Dictionary.h}}
+\doxysubsubsection{\texorpdfstring{create\_dictio()}{create\_dictio()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}}$\ast$ create\+\_\+dictio (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree }\end{DoxyParamCaption})}
 
 
 
-Function that returns a string of characters consisting of 0 or 1 depending on the path taken to arrive at a given character. Example \+: 
+Dictionary and B\+ST creation function. Example \+: 
 
 
 \begin{DoxyCode}{0}
-\DoxyCodeLine{\textcolor{keywordflow}{if} (\mbox{\hyperlink{_dictionary_8h_a63b7963c9a1e8b5ee625b8f2ac7ef0f4}{find\_path}}(tree-\/>right, c, path)) \{}
+\DoxyCodeLine{\mbox{\hyperlink{struct_node_b_s_t}{NodeBST}}* BSTtree = \mbox{\hyperlink{_dictionary_8h_a9688a949b65f2154e14b498fb8ad6bc9}{create\_dictio}}(huffman\_tree);}
 \end{DoxyCode}
  
 \begin{DoxyParams}{Parameters}
 {\em Node$\ast$} & tree, Huffman tree. \\
 \hline
-{\em char} & c, character to search. \\
-\hline
-{\em char$\ast$$\ast$} & path, string to be modified when the character has been found. \\
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Node\+B\+S\+T$\ast$ B\+S\+Ttree, the new binary search tree. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_dictionary_8h_aa503872bdd6db6c5f160844b54d06e30}\label{_dictionary_8h_aa503872bdd6db6c5f160844b54d06e30}} 
+\index{Dictionary.h@{Dictionary.h}!depth\_tree@{depth\_tree}}
+\index{depth\_tree@{depth\_tree}!Dictionary.h@{Dictionary.h}}
+\doxysubsubsection{\texorpdfstring{depth\_tree()}{depth\_tree()}}
+{\footnotesize\ttfamily int depth\+\_\+tree (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+
+Calculation of the maximum depth of a tree. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\textcolor{keywordtype}{char}* path = (\textcolor{keywordtype}{char}*)malloc(\mbox{\hyperlink{_dictionary_8h_aa503872bdd6db6c5f160844b54d06e30}{depth\_tree}}(tree));}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em Node$\ast$} & tree, Huffman tree. \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-int i, 1 if the current character is the right one, 0 otherwise. 
+int, the depth. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_dictionary_8h_af6e596a36e204ce46f67f25e69cc1032}\label{_dictionary_8h_af6e596a36e204ce46f67f25e69cc1032}} 
+\index{Dictionary.h@{Dictionary.h}!find\_path@{find\_path}}
+\index{find\_path@{find\_path}!Dictionary.h@{Dictionary.h}}
+\doxysubsubsection{\texorpdfstring{find\_path()}{find\_path()}}
+{\footnotesize\ttfamily void find\+\_\+path (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node}{Node}} $\ast$}]{tree,  }\item[{char $\ast$}]{path,  }\item[{int}]{count,  }\item[{\mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$$\ast$}]{B\+S\+Ttree,  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+Function that writes a binary string to a dictionary and a binary search tree from a character tree. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_dictionary_8h_af6e596a36e204ce46f67f25e69cc1032}{find\_path}}(tree, path, 0, \&BSTtree, depth);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em Node$\ast$} & tree, Huffman tree. \\
+\hline
+{\em char$\ast$} & path, string containing the binary code. \\
+\hline
+{\em int} & count, counter corresponding to the current height of the tree. \\
+\hline
+{\em Node\+B\+S\+T$\ast$$\ast$} & B\+S\+Ttree, the B\+ST tree to modify. \\
+\hline
+{\em int} & depth, the depth of the tree (used for node allocation). \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_dictionary_8h_a140fcfb61ec6b60b7a8880f7400d9b05}\label{_dictionary_8h_a140fcfb61ec6b60b7a8880f7400d9b05}} 
+\index{Dictionary.h@{Dictionary.h}!free\_node\_ABR@{free\_node\_ABR}}
+\index{free\_node\_ABR@{free\_node\_ABR}!Dictionary.h@{Dictionary.h}}
+\doxysubsubsection{\texorpdfstring{free\_node\_ABR()}{free\_node\_ABR()}}
+{\footnotesize\ttfamily void free\+\_\+node\+\_\+\+A\+BR (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+
+Simple memory free function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Node\+B\+S\+T$\ast$} & node, the node to free. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_dictionary_8h_a722d7c2d54d251d86f1c2246202bfaf0}\label{_dictionary_8h_a722d7c2d54d251d86f1c2246202bfaf0}} 
+\index{Dictionary.h@{Dictionary.h}!insert\_ABR\_node@{insert\_ABR\_node}}
+\index{insert\_ABR\_node@{insert\_ABR\_node}!Dictionary.h@{Dictionary.h}}
+\doxysubsubsection{\texorpdfstring{insert\_ABR\_node()}{insert\_ABR\_node()}}
+{\footnotesize\ttfamily void insert\+\_\+\+A\+B\+R\+\_\+node (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_node_b_s_t}{Node\+B\+ST}} $\ast$$\ast$}]{B\+S\+Ttree,  }\item[{char $\ast$}]{path,  }\item[{char}]{c,  }\item[{int}]{depth }\end{DoxyParamCaption})}
+
+
+
+Inserting a node in a B\+ST. Example \+: 
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\mbox{\hyperlink{_dictionary_8h_a722d7c2d54d251d86f1c2246202bfaf0}{insert\_ABR\_node}}(BSTtree, path, tree-\/>info-\/>chara, depth);}
+\end{DoxyCode}
+ 
+\begin{DoxyParams}{Parameters}
+{\em Node\+B\+S\+T$\ast$$\ast$} & B\+S\+Ttree, the B\+ST tree. \\
+\hline
+{\em char$\ast$} & path, the binary path of the new char. \\
+\hline
+{\em char} & c, the new char. \textbackslash{}parem int depth, the depth used to allocate the new binary path. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Nothing. 
 \end{DoxyReturn}
