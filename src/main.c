@@ -37,11 +37,12 @@ int main(){
                 printf("Creation of the Huffman tree...\n");
                 Node* huffman_tree = create_huffman_tree(&list_tree);
                 printf("Creation of the dictionary...\n");
-                create_dictio(huffman_tree);
+                NodeABR* ABRtree = create_dictio(huffman_tree);
                 printf("Encoding...\n");
-                encod();
+                encod(ABRtree);
                 free_list(list);
                 free_node(huffman_tree);
+                free_node_ABR(ABRtree);
                 printf("Encoding completed in %.2f seconds !\n\n", (clock() - begin) / (float)CLOCKS_PER_SEC);
                 stop = 1;
             }
